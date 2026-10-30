@@ -38,6 +38,12 @@ The samples fall into six registers, because my PR descriptions, chat messages a
 
 For a rewrite, read the matching entry under `registers` and ignore the top-level numbers. The `note` field in the file repeats this.
 
+### Setting up your own
+
+1. Install the humanizer skill from the Claude official marketplace. On other harnesses, install it from the [GitHub repo](https://github.com/adelaidasofia/humanizer).
+2. The marketplace install includes `voice-indexer.py`, but only in the plugin cache (`~/.claude/plugins/cache/anthropic-plugin-directory/humanizer-adelaidasofia/<version>/`), not at the `~/.claude/skills/humanizer/` path the skill tells you to run it from. Copy it to `~/.claude`. On other harnesses, download it from the GitHub repo.
+3. Run the skill and ask Claude to set up a fingerprint. It needs a corpus of your writing, so have the files ready.
+
 ### Limits
 
 - Some registers are small. The PR register is 4 files and 640 words, so its statistics move a lot with each added sample.
