@@ -1,0 +1,440 @@
+{
+  "version": "1.0",
+  "files_indexed": 32,
+  "total_words": 17799,
+  "sentence_length": {
+    "mean": 21.8,
+    "std": 19.61,
+    "p25": 10,
+    "p50": 17,
+    "p75": 28
+  },
+  "paragraph_length": {
+    "mean": 32.1,
+    "std": 37.69
+  },
+  "spanish_ratio": {
+    "mean": 0.003,
+    "interpretation": "english-dominant"
+  },
+  "punctuation": {
+    "commas_per_sentence": 0.562,
+    "colons_per_100_words": 0.478,
+    "semicolons_per_100_words": 0.092,
+    "parentheticals_per_100_words": 0.548,
+    "em_dashes_per_100_words": 0.154,
+    "ellipses_per_100_words": 0.03
+  },
+  "top_connectors_per_1000_words": {
+    "and": 19.16,
+    "when": 3.54,
+    "if": 3.26,
+    "but": 2.53,
+    "there": 2.53,
+    "so": 2.3,
+    "only": 1.46,
+    "then": 1.4,
+    "just": 1.35,
+    "now": 1.24,
+    "like": 1.12,
+    "here": 1.07,
+    "since": 0.96,
+    "also": 0.79,
+    "once": 0.79,
+    "really": 0.73,
+    "because": 0.67,
+    "even": 0.62,
+    "always": 0.62,
+    "while": 0.56
+  },
+  "top_opener_words": {
+    "the": 35,
+    "this": 23,
+    "if": 15,
+    "we": 14,
+    "in": 14,
+    "i": 12,
+    "when": 12,
+    "only": 10,
+    "a": 10,
+    "to": 9,
+    "there": 8,
+    "as": 7,
+    "upon": 7,
+    "so": 6
+  },
+  "vocabulary_richness": {
+    "avg_ttr": 0.647,
+    "interpretation": "moderate"
+  },
+  "note": "Combined stats blend six registers and understate engineering prose. When rewriting, use the matching entry in 'registers', not the top-level numbers. Sources: 4 PR descriptions, 11 Jira tickets/comments (3 too short for the indexer, so jira stats cover 8), 34 Mattermost messages in 3 files, 6 technical design/spec docs (template headers and code stripped, 9,760 words), 3 fiction pieces, 8 talk scripts (2 are excerpts). Talks contain scripture quotes, which are not the author's voice. Built 2026-10-30 with voice-indexer.py plus a merge step. Work-domain word lists, coworker names and internal system names were removed before publishing.",
+  "registers": {
+    "tech_pr": {
+      "files": 4,
+      "words": 640,
+      "sentence_length": {
+        "mean": 25.6,
+        "std": 13.52,
+        "p25": 17,
+        "p50": 22,
+        "p75": 29
+      },
+      "paragraph_mean": 80,
+      "punctuation": {
+        "commas_per_sentence": 0.52,
+        "colons_per_100_words": 0.556,
+        "semicolons_per_100_words": 0.113,
+        "parentheticals_per_100_words": 0.545,
+        "em_dashes_per_100_words": 0.0,
+        "ellipses_per_100_words": 0.0
+      },
+      "top_connectors_per_1000_words": {
+        "and": 18.75,
+        "since": 7.81,
+        "when": 4.69,
+        "there": 4.69,
+        "so": 3.12,
+        "here": 3.12,
+        "if": 3.12,
+        "while": 1.56,
+        "still": 1.56,
+        "just": 1.56
+      },
+      "markers": [
+        "spaced hyphen ' - ' as a dash, never an em dash",
+        "slash alternatives: updated/changed, frozen screen/black screen",
+        "parenthetical asides for rationale or config detail",
+        "very long sentences chained with 'and', 'since', 'so'; short sentences land as flat conclusions",
+        "casual intensifiers in informal openers: 'Yep', 'waaayyy too much'",
+        "plain verbs: is/are/has, 'gets destroyed', 'goes to the same queue'",
+        "exact identifiers verbatim (class names, config flags with their values), links to upstream issues/docs",
+        "problem first, then mechanism, then why it works",
+        "'Note that' for caveats; no hedging otherwise",
+        "lowercase product names mid-sentence; sloppy spacing (double spaces after periods, space before final period after URL)",
+        "no bold, no emoji, no headers, no sign-offs or closers"
+      ],
+      "avoid": [
+        "em dashes",
+        "rule-of-three lists",
+        "significance/promo language",
+        "closing summary sentences",
+        "'Additionally' and other stacked transitions",
+        "tidy parallel structure"
+      ]
+    },
+    "jira": {
+      "files": 8,
+      "words": 694,
+      "sentence_length": {
+        "mean": 21.03,
+        "std": 9.67,
+        "p25": 14,
+        "p50": 21,
+        "p75": 28
+      },
+      "paragraph_mean": 33.05,
+      "punctuation": {
+        "commas_per_sentence": 0.249,
+        "colons_per_100_words": 0.0,
+        "semicolons_per_100_words": 0.078,
+        "parentheticals_per_100_words": 0.736,
+        "em_dashes_per_100_words": 0.212,
+        "ellipses_per_100_words": 0.0
+      },
+      "top_connectors_per_1000_words": {
+        "and": 17.29,
+        "if": 7.2,
+        "also": 4.32,
+        "so": 2.88,
+        "because": 2.88,
+        "when": 2.88,
+        "just": 2.88,
+        "then": 2.88,
+        "now": 2.88,
+        "only": 2.88
+      },
+      "markers": [
+        "short, often 1-3 sentence tickets; problem or current behavior first, then the change ('Right now...', 'Currently...', 'When we send...')",
+        "'This is because...' / 'This is needed so that...' to give the cause, then 'Ideally we'd...' or 'We should...' for the ask",
+        "'We' for the team and the system; imperative for the task ('Replace...', 'Setup...', 'Added...')",
+        "lowercase informal fragments and shorthand are fine; occasional all-caps for a follow-up note",
+        "class, bean, setting, and service names verbatim; real values stated (a concurrency limit, a library version, a date)",
+        "spaced hyphen ' - ' for asides; parentheses for rationale",
+        "scope and priority stated plainly ('Not critical for Thursday as long as we don't re-deploy', 'Smoke testing ... will be sufficient')",
+        "direct questions to named people at the end ('<name> <name> do you agree?')",
+        "unpunctuated list lines for task lists, no bullets or bold"
+      ],
+      "avoid": [
+        "bold or headers in tickets",
+        "rule-of-three flourishes",
+        "'This ensures' / 'robust' / 'seamless' wording",
+        "closing recap lines"
+      ],
+      "caution": "Two samples contain spaced em dashes. They read like AI-assisted drafts, so the em-dash count here may not be the author's own habit. The confirmed dash in this register is ' - '."
+    },
+    "chat": {
+      "files": 3,
+      "words": 765,
+      "sentence_length": {
+        "mean": 14.06,
+        "std": 8.85,
+        "p25": 8,
+        "p50": 11,
+        "p75": 21,
+        "units": 52
+      },
+      "paragraph_mean": 22.5,
+      "punctuation": {
+        "commas_per_sentence": 0.447,
+        "colons_per_100_words": 0.412,
+        "semicolons_per_100_words": 0.257,
+        "parentheticals_per_100_words": 0.305,
+        "em_dashes_per_100_words": 0.0,
+        "ellipses_per_100_words": 0.203
+      },
+      "top_connectors_per_1000_words": {
+        "and": 20.92,
+        "if": 6.54,
+        "because": 5.23,
+        "now": 5.23,
+        "when": 3.92,
+        "also": 3.92,
+        "maybe": 3.92,
+        "really": 3.92,
+        "there": 3.92,
+        "but": 2.61
+      },
+      "per_message": {
+        "messages": 34,
+        "words_mean": 21.5,
+        "words_median": 17,
+        "words_max": 58,
+        "start_lowercase_pct": 44,
+        "no_terminal_punctuation_pct": 41,
+        "contain_question_pct": 21
+      },
+      "stat_caveat": "sentence_length is recomputed with message boundaries as sentence breaks, because the indexer merges messages that lack final punctuation.",
+      "markers": [
+        "one thought per message, usually under 20 words; a single message can be a lone line",
+        "about 40% start lowercase and skip the final period; announcements and longer posts use full capitalization and punctuation",
+        "'i' lowercase in quick replies, 'I' in longer ones; 'I' is the most common opener",
+        "ellipses in speech-like asides",
+        "questions to the room, often tentative",
+        "softened pushback with a stated reason ('having that change spread between two files is brittle. If there's not a simple way it's fine.')",
+        "casual humor and emoji sparingly (':)', a laughing emoji); no sign-offs",
+        "parenthetical asides with a wry note ('(and hopefully tokens get cheaper? Maybe? Probably not)')",
+        "announcements: say what is available, how to get it, how to invoke it, then what feedback is wanted, in short lines",
+        "plain statement of own state when relevant ('It was a stressful morning')",
+        "tags people with @Name and gives the exact value they need"
+      ],
+      "avoid": [
+        "formal openers and thanks-for-reaching-out phrasing",
+        "bullet-heavy replies",
+        "exclamation marks and cheerleading",
+        "wrap-up summaries"
+      ]
+    },
+    "specs": {
+      "files": 6,
+      "words": 9760,
+      "sentence_length": {
+        "mean": 27.11,
+        "std": 24.55,
+        "p25": 13,
+        "p50": 20,
+        "p75": 32
+      },
+      "paragraph_mean": 25.37,
+      "punctuation": {
+        "commas_per_sentence": 0.799,
+        "colons_per_100_words": 1.274,
+        "semicolons_per_100_words": 0.112,
+        "parentheticals_per_100_words": 1.151,
+        "em_dashes_per_100_words": 0.0,
+        "ellipses_per_100_words": 0.061
+      },
+      "top_connectors_per_1000_words": {
+        "and": 14.75,
+        "when": 4.1,
+        "if": 3.18,
+        "there": 2.15,
+        "only": 2.05,
+        "so": 1.64,
+        "then": 1.54,
+        "but": 1.23,
+        "once": 1.13,
+        "here": 1.02
+      },
+      "stat_caveat": "PDF extraction leaves some bullet lists and signature lines merged into long units, so the mean is inflated. Trust the median (20) and P75 (32).",
+      "markers": [
+        "Summary opens on the current state ('Currently X is done by Y'), then the pain ('This is an extra step... very error prone'), then the alternative ('An alternative that provides...')",
+        "design statements in plain active voice: 'we accept batches', 'To avoid overload...', 'To avoid abuse, rules will be setup'",
+        "best-practice docs address the reader directly with a blunt rule plus the reason ('In general, don't use X for Y, this is what Z is for.')",
+        "'In general' to state a default, 'Note that' for a caveat, 'At the very least skim...' for a minimum bar",
+        "back-of-envelope math written inline with honest hedges ('ballpark handwavy figure', 'let's round up', '1.5x safety buffer', 'Plenty of room to grow')",
+        "terminology sections define terms in one short line ('Node: slab of memory running the engine')",
+        "short phrase bullets under a heading, not full sentences; exact destinations, class names, and config keys verbatim",
+        "section order is fixed by the template (Summary, Technical Design, Dependencies, Test Strategy, Impact & Risk, Scalability); the prose under each is brief",
+        "parentheticals for rationale and examples ('(there are libraries for that)', 'e.g. when keys need to be cycled/updated')",
+        "slash alternatives and informal verbs survive in formal docs ('cycled/updated', 'stashed to config server')",
+        "no em dashes, no bold in running text, no closing recap"
+      ],
+      "avoid": [
+        "expanding terse bullets into paragraphs",
+        "formal filler ('it should be noted that')",
+        "adding rule-of-three lists",
+        "softening blunt guidance"
+      ],
+      "caution": "Header blocks, TOCs, jira macros, links, and meeting passcodes were stripped before indexing. Co-authored docs (other developers listed) may not be solely your wording."
+    },
+    "fiction": {
+      "files": 3,
+      "words": 1717,
+      "sentence_length": {
+        "mean": 13.27,
+        "std": 9.47,
+        "p25": 6,
+        "p50": 11,
+        "p75": 16
+      },
+      "paragraph_mean": 36.4,
+      "punctuation": {
+        "commas_per_sentence": 0.488,
+        "colons_per_100_words": 0.051,
+        "semicolons_per_100_words": 0.0,
+        "parentheticals_per_100_words": 0.0,
+        "em_dashes_per_100_words": 0.379,
+        "ellipses_per_100_words": 0.0
+      },
+      "top_connectors_per_1000_words": {
+        "and": 20.38,
+        "but": 5.82,
+        "just": 3.49,
+        "there": 3.49,
+        "somehow": 1.75,
+        "then": 1.75,
+        "so": 1.16,
+        "when": 1.16,
+        "still": 1.16,
+        "clearly": 1.16
+      },
+      "top_openers": {
+        "the": 12,
+        "mara": 5,
+        "a": 3,
+        "i": 3,
+        "vaiola": 2,
+        "within": 2,
+        "as": 2,
+        "two": 1,
+        "they": 1,
+        "an": 1,
+        "somehow": 1,
+        "with": 1,
+        "it": 1,
+        "what": 1,
+        "for": 1,
+        "then": 1,
+        "in": 1,
+        "something": 1,
+        "on": 1,
+        "behind": 1
+      },
+      "markers": [
+        "short declarative sentences, many fragments as punch ('Not yet.', 'It was her body.', 'The graph reached critical levels.')",
+        "refrain/callback lines repeated with one detail changed ('The lighting on the operations floor was...')",
+        "ordinal noticing: 'The first thing she noticed... The second thing she noticed...'",
+        "dashes as asides: spaced ' - ' and spaced em dash ' — ' both appear",
+        "concrete numbers and objects (11,000 times per second, rivets, coffee mugs, token stick)",
+        "understatement and hedged narration ('Hesitation first. Then resignation, sort of.', 'might be described as')",
+        "'Somehow,' and 'A beat.' as transitions; dialogue clipped, no tags beyond 'said' or an action",
+        "worldbuilding via invented nouns used without explanation (Corp-Sec, vidcams, Cobalts, token exchange stick)"
+      ],
+      "avoid": [
+        "explaining the setting",
+        "adjective stacking",
+        "tidy summing-up lines after a scene beat"
+      ]
+    },
+    "talks": {
+      "files": 8,
+      "words": 4223,
+      "sentence_length": {
+        "mean": 17.09,
+        "std": 10.88,
+        "p25": 9,
+        "p50": 15,
+        "p75": 23
+      },
+      "paragraph_mean": 70.38,
+      "punctuation": {
+        "commas_per_sentence": 0.787,
+        "colons_per_100_words": 0.504,
+        "semicolons_per_100_words": 0.054,
+        "parentheticals_per_100_words": 0.205,
+        "em_dashes_per_100_words": 0.263,
+        "ellipses_per_100_words": 0.0
+      },
+      "top_connectors_per_1000_words": {
+        "and": 28.89,
+        "but": 4.74,
+        "so": 4.5,
+        "when": 3.08,
+        "if": 3.08,
+        "there": 2.6,
+        "just": 2.37,
+        "like": 2.37,
+        "really": 1.89,
+        "now": 1.89
+      },
+      "top_openers": {
+        "so": 4,
+        "we": 4,
+        "who": 4,
+        "and": 3,
+        "yes": 3,
+        "now": 2,
+        "but": 2,
+        "no": 2,
+        "of": 2,
+        "the": 2,
+        "this": 2,
+        "have": 2,
+        "are": 2,
+        "among": 1,
+        "not": 1,
+        "what": 1,
+        "happy": 1,
+        "speaking": 1,
+        "you": 1,
+        "why": 1
+      },
+      "markers": [
+        "spoken, second-person and 'we' address; rhetorical questions answered right away ('Did that rub off?', 'Have those words proven true? Absolutely.')",
+        "'Yes,' as an affirming opener; also 'Sadly,', 'No doubt', 'Of course', 'Notice', 'Now then,', 'So,'",
+        "everyday analogies carry the point (leaky roof, anchor, driving a car, Jack in the Box); concrete over abstract",
+        "scripture inline after a spaced hyphen, with (READ) cues as stage directions",
+        "contrast structure: 'Contrast this with...', 'Now compare that situation with...'",
+        "long sentences with comma-chained clauses; short punch sentence after ('Lives saved.', 'You won't find it.')",
+        "plain vocabulary with occasional formal word ('fealty', 'egregious', 'entreaty')",
+        "specific stats cited with source links on outline drafts"
+      ],
+      "avoid": [
+        "written-essay polish",
+        "dropping the direct address",
+        "removing the (READ) cues and time marks in outlines"
+      ]
+    }
+  },
+  "qualitative": {
+    "cross_register": [
+      "spaced hyphen ' - ' is the default dash in every register; spaced em dash appears in fiction and a few talks",
+      "starts sentences with And, But, So freely; 'and' is by far the top connector",
+      "plain verbs and concrete detail; no bold or headers in prose; emoji only in rare chat jokes",
+      "no closing-summary sentences in PRs, Jira, chat, and fiction; talks end on an exhortation, not a recap",
+      "tech, Jira, and chat give the cause with 'since', 'because', or 'This is because'",
+      "typos and uneven spacing are left in (double spaces, 'your hearts desire'); do not 'fix' them unless asked"
+    ],
+    "pronoun_use": "tech and Jira: impersonal or 'we', occasional 'I'; chat: first person 'I' dominant; specs: impersonal with 'we', imperative for guidance; fiction: close third; talks: 'we' and 'you'"
+  }
+}
