@@ -18,7 +18,7 @@ Personal global instructions for Claude Code (also usable with other harnesses):
 
 ### Sources
 
-The samples fall into six registers, because my PR descriptions, chat messages and talk scripts don't sound alike:
+The samples fall into seven registers, because my PR descriptions, chat messages and talk scripts don't sound alike:
 
 - 4 PR descriptions
 - 11 Jira tickets and comments (3 were too short for the indexer, so the stats cover 8)
@@ -26,11 +26,12 @@ The samples fall into six registers, because my PR descriptions, chat messages a
 - 6 technical design and spec docs (about 9,760 words, with template headers and code stripped)
 - 3 pieces of fiction
 - 8 talk scripts (2 are excerpts, and scripture quotes inside them are not my voice)
+- 4 Spanish talk outlines (1,458 words after removing quotes and pasted publication text). They sit in their own `talks_es` register and are not counted in the totals above, which cover the other six registers.
 
 ### How it was derived
 
 1. `voice-indexer.py`, a stdlib-only Python script from the [humanizer skill](https://github.com/adelaidasofia/humanizer) by adelaidasofia (MIT license), read the samples and computed the statistics: sentence length (mean, standard deviation, 25th, 50th and 75th percentiles), paragraph length, punctuation per sentence or per 100 words (commas, colons, semicolons, parentheticals, em dashes, ellipses), connector frequency per 1,000 words, the most common sentence-opening words, vocabulary richness (type-token ratio), and the share of Spanish words.
-2. The script's output blends all six registers, which understates engineering prose, so the same statistics were recomputed per register and merged into a `registers` section. Chat gets its own sentence boundaries per message, since the indexer merges messages that lack final punctuation.
+2. The script's output blends the six English registers, which understates engineering prose, so the same statistics were recomputed per register and merged into a `registers` section. Chat gets its own sentence boundaries per message, since the indexer merges messages that lack final punctuation.
 3. Each register also got `markers` (patterns to match), `avoid` (patterns to keep out) and sometimes a `caution`. These are qualitative notes written from reading the samples, not computed values.
 4. This published copy had work-specific content removed: the most common content words, opening words that were domain terms, coworker names and internal system names. The style statistics and the register notes are otherwise unchanged.
 
@@ -42,7 +43,7 @@ The samples fall into six registers, because my PR descriptions, chat messages a
 
 ### Limits
 
-- Some registers are small. The PR register is 4 files and 640 words, so its statistics move a lot with each added sample.
+- Some registers are small. The PR register is 4 files and 640 words, and `talks_es` is 4 files and 1,458 words, so their statistics move a lot with each added sample.
 - A few Jira samples read like AI-assisted drafts, and the `jira` register's `caution` says so.
 - The spec stats come from PDF text and some co-authored docs, so the mean sentence length is inflated. Use the median and 75th percentile.
 - The fingerprint measures surface style. It doesn't capture whether the content is right.

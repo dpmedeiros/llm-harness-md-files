@@ -67,7 +67,7 @@
     "avg_ttr": 0.647,
     "interpretation": "moderate"
   },
-  "note": "Combined stats blend six registers and understate engineering prose. When rewriting, use the matching entry in 'registers', not the top-level numbers. Sources: 4 PR descriptions, 11 Jira tickets/comments (3 too short for the indexer, so jira stats cover 8), 34 Mattermost messages in 3 files, 6 technical design/spec docs (template headers and code stripped, 9,760 words), 3 fiction pieces, 8 talk scripts (2 are excerpts). Talks contain scripture quotes, which are not the author's voice. Built 2026-10-30 with voice-indexer.py plus a merge step. Work-domain word lists, coworker names and internal system names were removed before publishing.",
+  "note": "Combined stats blend six registers and understate engineering prose. When rewriting, use the matching entry in 'registers', not the top-level numbers. Sources: 4 PR descriptions, 11 Jira tickets/comments (3 too short for the indexer, so jira stats cover 8), 34 Mattermost messages in 3 files, 6 technical design/spec docs (template headers and code stripped, 9,760 words), 3 fiction pieces, 8 talk scripts (2 are excerpts). Talks contain scripture quotes, which are not the author's voice. Built 2026-10-30 with voice-indexer.py plus a merge step. Work-domain word lists, coworker names and internal system names were removed before publishing. 'talks_es' (4 Spanish talk outlines, 1,458 words after filtering) is a separate register and is not counted in the top-level totals.",
   "registers": {
     "tech_pr": {
       "files": 4,
@@ -424,6 +424,72 @@
         "dropping the direct address",
         "removing the (READ) cues and time marks in outlines"
       ]
+    },
+    "talks_es": {
+      "files": 4,
+      "words": 1458,
+      "language": "es",
+      "sentence_length": {
+        "mean": 12.9,
+        "std": 7.41,
+        "p25": 7,
+        "p50": 12,
+        "p75": 16
+      },
+      "paragraph_mean": 56.08,
+      "spanish_ratio": 0.361,
+      "punctuation": {
+        "commas_per_sentence": 0.549,
+        "colons_per_100_words": 0.823,
+        "semicolons_per_100_words": 0.48,
+        "parentheticals_per_100_words": 0.549,
+        "em_dashes_per_100_words": 0.0,
+        "ellipses_per_100_words": 0.0,
+        "question_marks_per_100_words": 1.509,
+        "spaced_en_dashes_per_100_words": 0.274
+      },
+      "top_connectors_per_1000_words": {
+        "que": 44.58,
+        "y": 14.4,
+        "para": 13.72,
+        "por": 7.54,
+        "como": 7.54,
+        "cuando": 5.49,
+        "si": 5.49,
+        "pero": 2.74,
+        "aunque": 2.06,
+        "una vez que": 1.37
+      },
+      "top_openers": {
+        "parrafo": 6,
+        "cómo": 4,
+        "si": 4,
+        "mas": 4,
+        "la": 3,
+        "los": 3,
+        "podemos": 3,
+        "cuando": 3,
+        "no": 3,
+        "como": 3
+      },
+      "markers": [
+        "outline style: one statement or question per line, usually no final period; tab-indented sub-points under a lead line; time marks like '(4 min.)' after section titles",
+        "questions end in '?' with no opening '¿' ('Cómo podemos afrontar la pérdida del empleo...?', 'Cuales son algunas de ellas?'); a question is often answered by the next line ('Claro que si.')",
+        "paragraph cues in study outlines: 'Parrafo 2: ...' then the question, then the answer indented below",
+        "inclusive 'nosotros' exhortations: 'Actuemos...', 'No nos inquietemos', 'Recordemos que...', 'confiemos en...'; impersonal 'uno' and 'tenemos que / hemos de' for obligation; 'Nota que...' as a direct imperative",
+        "'que' is by far the top connector, then 'y', 'para', 'por', 'como', 'cuando'; 'Asi que', 'Mas bien', 'Entonces', 'Claro que si' as spoken transitions",
+        "semicolons chain parallel clauses ('la comida y la gasolina...; las cifras de desempleo...')",
+        "scripture refs inline in parentheses, after a spaced hyphen or dash, or bare after the sentence ('Job 16:5 - Nuestras palabras...'); spaced ' - ' in some outlines and spaced ' – ' in others",
+        "exact numbers cited from reports ('7,508,050', '96% del maximo'), one named example per point; plain vocabulary, 'hermanos' as the audience term",
+        "double space after a period in typed notes; many words typed without accents ('sabado', 'persuasion', 'Jehova'), mixed with accented words in the earlier samples"
+      ],
+      "avoid": [
+        "Spanish AI connectors and openers (cabe destacar, en este sentido, en definitiva, en el mundo actual, es menester)",
+        "closing-summary sentence; outlines end on an exhortation or a short pointer ('Concluya leyendo el ultimo parrafo')",
+        "adding '¿' or final periods to outline lines",
+        "essay-style polish over the outline rhythm; restoring accents or fixing grammar slips"
+      ],
+      "caution": "Four outlines totaling 1,458 words after filtering, so stats are rough and sentence splits follow line breaks. Excluded from the counts: quoted scripture and testimony, pasted publication excerpts, and sentences lifted from those excerpts. The double space after periods is real but not in the counts, since whitespace was normalized. Typos, missing accents and grammar slips ('viviend', 'apropriadamente', 'circustancias', 'Santagio', 'Puede que se pone', 'tiene que aplica') are left as written; do not fix them unless asked."
     }
   },
   "qualitative": {
