@@ -8,7 +8,7 @@ Personal global instructions for Claude Code (also usable with other harnesses):
 - `CLAUDE.md` and `RTK.md` configure RTK, a command-output filter that shortens shell output to save tokens.
 - `WRITING.md` has the prose rules: voice, honesty, structure for MR/PR descriptions and technical docs, and a required humanizer pass on written drafts.
 - `CODE_STYLE.md` has language-agnostic defaults for writing and refactoring code.
-- `CLEAN_CODE.md` and `CLEAN_ARCHITECTURE.md` are my summaries of the two Robert C. Martin books, used as review checklists.
+- `CLEAN_CODE.md` and `CLEAN_ARCHITECTURE.md` are cribbed summaries from github (original source forgotten) of the two Robert C. Martin books, used as review checklists.
 - `SKILL_AUTHORING.md` has the rules for writing Claude Code skill files.
 - `voice-fingerprint.sanitized.json` is the voice fingerprint described below.
 
@@ -34,15 +34,11 @@ The samples fall into six registers, because my PR descriptions, chat messages a
 3. Each register also got `markers` (patterns to match), `avoid` (patterns to keep out) and sometimes a `caution`. These are qualitative notes written from reading the samples, not computed values.
 4. This published copy had work-specific content removed: the most common content words, opening words that were domain terms, coworker names and internal system names. The style statistics and the register notes are otherwise unchanged.
 
-### Using it
-
-For a rewrite, read the matching entry under `registers` and ignore the top-level numbers. The `note` field in the file repeats this.
-
 ### Setting up your own
 
 1. Install the humanizer skill from the Claude official marketplace. On other harnesses, install it from the [GitHub repo](https://github.com/adelaidasofia/humanizer).
 2. The marketplace install includes `voice-indexer.py`, but only in the plugin cache (`~/.claude/plugins/cache/anthropic-plugin-directory/humanizer-adelaidasofia/<version>/`), not at the `~/.claude/skills/humanizer/` path the skill tells you to run it from. Copy it to `~/.claude`. On other harnesses, download it from the GitHub repo.
-3. Run the skill and ask Claude to set up a fingerprint. It needs a corpus of your writing, so have the files ready.
+3. Run the skill and ask Claude to set up a fingerprint. It needs a corpus of your writing, so have the files ready. It will write `voice-fingerprint.json` to your `~/.claude` (or wherever) directory and use it in `/humanizer` skill invocations.
 
 ### Limits
 
