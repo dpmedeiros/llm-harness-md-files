@@ -10,9 +10,9 @@ Use the `/skill-creator` skill (if running Claude, or another similar skill if a
 Before writing or editing code in a given language, read CODE_STYLE.md. Don't read it unless you're actually writing or editing code.
 
 ## Writing prose
-Before writing, adding to, or revising any prose or markdown, read WRITING.md. That covers chat replies, files, technical docs (READMEs, design/architecture docs, runbooks), MR/PR descriptions, commit bodies, review comments, status updates, summaries, agent/skill definitions, and Jira/Confluence/Mattermost/Slack/`<whatever chat client>` content, down to one added line or table cell. WRITING.md holds the style rules and the required `/humanizer` pass for written drafts. Chat replies follow the style rules without the pass.
+Read WRITING.md once when writing first becomes relevant in a session. Apply its rules throughout the session without rereading. Read it again only if the file changes, its contents are no longer available after compaction, or a specific uncertainty requires checking a passage. A new turn or writing task alone does not require another read. That covers chat replies, files, technical docs (READMEs, design/architecture docs, runbooks), MR/PR descriptions, commit bodies, review comments, status updates, summaries, agent/skill definitions, and Jira/Confluence/Mattermost/Slack/`<whatever chat client>` content, down to one added line or table cell. WRITING.md holds the style rules and the required `/humanizer` pass for written drafts. Chat replies follow the style rules without the pass.
 
-Red flags — these thoughts mean the rule above still applies:
+Red flags — these thoughts mean the writing rules still apply; reuse the loaded guidance:
 
 | Thought                                                          | Reality                                                       |
 |------------------------------------------------------------------|---------------------------------------------------------------|
