@@ -13,10 +13,41 @@ unless you're actually working in that language.
 ## Line width
 Keep lines to 120 characters as much as possible.
 
+## Vertical spacing
+
+Use blank lines to separate statements with different purposes, such as input validation, computation,
+and persistence. Keep statements that express one idea together. Separate function and class
+definitions according to the language's formatter and the surrounding code's conventions.
+
+Prefer one blank line between logical groups. Avoid spacing every statement apart or using repeated
+blank lines as decoration; spacing should reveal how the code is organized.
+
 ## Functions over inline logic
 
-Break multi-step logic into named functions. Each function does one thing; name it for what it does.
-The caller should read as a sequence of named steps, not an inlined mix of logic and orchestration.
+Break multi-step logic into named functions whose names express each step's purpose. Keep the caller
+focused on coordinating those steps and the helpers focused on their implementations.
+
+## Single responsibility principle
+
+The single responsibility principle gives each function, class or module one responsibility and one
+reason to change. Separate validation, transformation, persistence and presentation when those
+concerns can change independently. A function may coordinate these steps to complete one workflow;
+keep their detailed implementations in helpers.
+
+Choose boundaries around behavior and ownership. Extract a helper when it names a distinct operation
+or isolates a rule or side effect. Keep related calculations together when they produce one result;
+avoid splitting readable logic into trivial wrappers that force the reader to jump between functions.
+
+## Clear function outcomes
+
+Make it clear what successful execution produces, what state it changes and how failure is reported.
+Use precise names, parameters and return types. Document preconditions or side effects that those do
+not make apparent.
+
+Every return path must honor the same contract. A read operation returns the requested value or its
+declared absence/error; a state-changing operation performs its named change and reports completion
+or failure using the codebase's conventions. Separate unrelated operations instead of selecting
+different responsibilities with flags or returning unrelated kinds of results.
 
 ## Named functions over anonymous ones for reusable logic
 
@@ -49,6 +80,14 @@ reads as a sequential story: resolve inputs, validate, do the steps, return. No 
 definitions interleaved into that body. Push every reusable or multi-statement piece of logic up
 into a named function defined above it, parameterized rather than closing over body-local state, so
 it can live with the other definitions instead of sitting in the middle of the flow.
+
+Within each function, make the normal path easy to follow: establish inputs, validate what is needed,
+perform the operation and produce its outcome. Keep coordinating calls at a consistent level of
+detail, with names that explain intent. A reader should understand the sequence and its result before
+opening the helper implementations.
+
+Handle invalid inputs and early exits near the conditions that cause them, so the main path stays
+visible. Use comments to explain constraints or reasons that names and structure cannot express.
 
 ## Behavior-driven tests
 

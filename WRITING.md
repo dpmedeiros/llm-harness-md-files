@@ -6,6 +6,7 @@ Every section applies to all writing, except where a rule says otherwise. Rules 
 ## Voice and wording
 - **When describing finished changes, lead with the verb, past tense.** "Moved the loop into…", "Preserved the original code…" — not "The workflow now…", "This change adds…", or subject-heavy sentences.
 - **Plain words over crafted ones, in simple sentences.** Reuse the plain verb instead of reaching for variety (avoid "stripped out / moved over / picked up" when "removed" works three times). Avoid parallel sentence constructions. Fewer words are better.
+- **Keep prose human and engaging.** Use a natural voice, varied sentence length and some personality where the audience allows it. Keep technical meaning precise; humor and warmth should help the reader follow the subject.
 - **Bullets over paragraphs** for anything that lists changes; skip transitions like "Separately," / "Along the way," / "Additionally,".
 - **When describing finished changes, name the payoff when there is one** ("…which simplified the protect script"), but don't invent one.
 - **Prefer specific numbers and absolute dates** to "a few" or "recently".
@@ -14,11 +15,13 @@ Every section applies to all writing, except where a rule says otherwise. Rules 
 ## Honesty
 - **State the unglamorous truth.** If a step only makes tests compile, say "compile", not "verify". If something usually fails, say so. Never round reality up to sound tidy — the caveat is often the most useful sentence.
 - **Don't over-claim or conflate.** Match the words to what the code actually does; don't call a compile check a "green-gate" or merge two steps because it reads better.
+- **Label the basis and status of claims.** Distinguish observed facts, documented behavior, inference and uncertainty. Keep implemented behavior separate from proposed work, and identify illustrative examples so readers cannot mistake them for verified mechanisms.
 
 ## Reader context
-- **Write prose as if the reader has never seen it before.** When editing because of feedback, don't add a clause stating the reason for the edit; a reader days or weeks later won't know that context. Example: "`DEFAULT_PROFILE` is intentional, not a gap to close with an error" answers a question the reader never asked. Write "`DEFAULT_PROFILE` is intentional".
+- **Write prose as if the reader has never seen it before.** Supply the purpose, starting conditions and context needed to understand the page without the conversation that produced it. When editing because of feedback, don't add a clause stating the reason for the edit; a reader days or weeks later won't know that context. Example: "`DEFAULT_PROFILE` is intentional, not a gap to close with an error" answers a question the reader never asked. Write "`DEFAULT_PROFILE` is intentional".
 - **State the current end state, not the reasoning path that led there.** Don't narrate the chain of decisions, alternatives considered, or how an artifact evolved — it bloats the document and overwhelms the reader. Architecture and design docs are the one exception: they may include a single level of rationale for why the current state is what it is, but never the full history behind it.
-- **Expand abbreviations and name unfamiliar terms on first use.** A reader arriving cold should not need another document to decode an acronym, a ticket key, or an internal tool name. Skip terms the reader already used.
+- **Define unfamiliar terms before using them.** Expand abbreviations and explain specialized terms, ticket keys and internal tools before relying on them in prose, tables or diagrams. Give the local meaning needed to follow the section; use a glossary for later reference.
+- **Connect concepts to the task and give examples.** Explain what is being achieved, how it works and why the concept matters here. Use a small concrete example when it helps explain an unfamiliar concept or causal relationship; include quantities or units when they clarify the result.
 
 ## Length and structure
 - **Cut detail for human readers.** Keep lists to 5 bullets or fewer and paragraphs to 4 sentences or fewer. Split a longer list by topic.
@@ -38,6 +41,20 @@ Applies to anything with sections a reader can stop at early — READMEs, design
 - **Order sections by how often a reader needs them.** Common path first; edge cases, advanced configuration, and rare failure modes later or in a linked reference.
 - **Push deep detail out of the main flow.** Full option lists, implementation internals, and exhaustive edge cases belong in subsections, appendices, or separate reference files.
 - **Don't require later sections to understand earlier ones.** A reader should be able to stop after any section and have a correct, if incomplete, understanding.
+
+## Workflows and diagrams
+
+Applies when explaining a process, design or behavior.
+
+- **Make the causal steps explicit.** State the goal and prerequisites, who performs each operation, what it reads or writes, and what result it produces. Include the intermediate step that explains why the result follows; keep analogies and shorthand secondary to the actual operation.
+- **Use diagrams freely when they clarify the subject.** Show workflows, ownership, dependencies, state changes or comparisons when a picture makes the relationship easier to follow. Define terms before the diagram and explain its relevant result or example afterward. Match the detail to the audience: technical diagrams can name concrete objects and transaction boundaries; investor diagrams should show simple user journeys and benefits.
+
+## Investor and product stories
+
+Applies to investor briefings and product narratives.
+
+- **Show what the user gains from each feature.** Start with a concrete user situation, describe what the feature enables and name the practical benefit. Connect each story to the product's purpose.
+- **Give the business rationale for each feature or story.** Explain why solving that user problem is worth pursuing. Label expected value, demand and willingness to pay as hypotheses until supported by evidence; keep delivered capabilities, proposed features and research questions distinct.
 
 ## Specific Claude-isms to avoid
 Verbal tics common in Claude-generated writing:
