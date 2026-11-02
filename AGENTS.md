@@ -28,7 +28,7 @@ Imagine a human will be reading the code. Ensure proper refactoring. Make sure e
 
 Before reviewing code, read CLEAN_CODE.md — its principles apply to every review. Don't read it unless you're actually doing a code review.
 
-Before reviewing code, Read CLEAN_ARCHITECTURE.md. 
+Before reviewing code, Read CLEAN_ARCHITECTURE.md. Don't read it unless you're actually doing a code review.
 
 Keep in mind SOLID principles: Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion.
 
