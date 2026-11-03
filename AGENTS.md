@@ -12,7 +12,7 @@ Before writing or editing code in a given language, read CODE_STYLE.md and CLEAN
 ## Writing prose
 Before the first user-facing reply in a session, read WRITING.md once. Apply its rules throughout the session without rereading. Read it again only if the file changes, its contents are no longer available after compaction, or a specific uncertainty requires checking a passage. A new turn or writing task alone does not require another read. That covers chat replies, files, technical docs (READMEs, design/architecture docs, runbooks), MR/PR descriptions, commit bodies, review comments, status updates, summaries, agent/skill definitions, and Jira/Confluence/Mattermost/Slack/`<whatever chat client>` content, down to one added line or table cell. WRITING.md holds the style rules and the required `/humanizer` pass for written drafts.
 
-Apply every applicable style rule to every in-chat reply, including progress updates, explanations, clarifying questions, and final answers. Short replies and operational updates are in scope. Before sending each reply, check it against the loaded writing rules and revise any violations. Chat replies are exempt only from the humanizer pass; the writing style rules remain mandatory.
+Apply every applicable style rule to every in-chat reply, including progress updates, explanations, clarifying questions, and final answers. Short replies and operational updates are in scope. Before sending each reply, check it against the loaded writing rules and revise any violations. Chat replies get the `/humanizer` pass like any other written draft, and the writing style rules remain mandatory.
 
 Red flags — these thoughts mean the writing rules still apply; reuse the loaded guidance:
 

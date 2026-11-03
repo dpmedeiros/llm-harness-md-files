@@ -68,6 +68,6 @@ Verbal tics common in Claude-generated writing:
 - Use at most one em-dash and one parenthetical aside per paragraph.
 
 ## Humanizing pass
-Run the `/humanizer` skill on every written draft before finalizing and apply its edits, however small the draft is (one sentence or a table cell included). Written drafts are files, commit bodies, MR/PR descriptions, review comments, status updates, summaries, and Jira, Confluence, Mattermost, or Slack content. Don't ask the user first or put it off to a later turn.
+Run the `/humanizer` skill on every written draft before finalizing and apply its edits, however small the draft is (one sentence or a table cell included). Written drafts are files, commit bodies, MR/PR descriptions, review comments, status updates, summaries, chat replies, and Jira, Confluence, Mattermost, or Slack content. Don't ask the user first or put it off to a later turn.
 
-Chat replies, and any draft when the skill isn't installed, follow the style rules above directly. For agent and skill definitions, keep the precision the instructions require — humanize tone and phrasing, but don't blur exact trigger conditions, parameter names, or specified behavior into vaguer prose.
+Any draft follows the style rules above directly when the skill isn't installed. For agent and skill definitions, keep the precision the instructions require — humanize tone and phrasing, but don't blur exact trigger conditions, parameter names, or specified behavior into vaguer prose.
