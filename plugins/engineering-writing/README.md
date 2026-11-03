@@ -12,6 +12,12 @@ Use $engineering-writing to revise this explanation for an engineer new to the s
 
 It can also be selected automatically for relevant tasks. Installing it makes it available to the model; selection on every reply is not guaranteed. It requires no other skills, account connections, or configuration.
 
+## Publisher and icon
+
+Daniel Medeiros maintains Engineering writing. The logo combines code brackets with lines of text to represent engineering communication. The listing and composer use the same high-contrast mark.
+
+Use [GitHub Issues](https://github.com/dpmedeiros/llm-harness-md-files/issues) for support. A GitHub account is needed to file an issue.
+
 ## Install from this checkout
 
 This repository includes a marketplace at `.agents/plugins/marketplace.json`. From the repository root, register it with:
@@ -44,4 +50,6 @@ The original `WRITING.md` remains the author's personal guide and is unchanged b
 
 ## Release status
 
-Version 0.1.0 is a local package for review and testing. No license is declared in the package; select one before public release. No public directory submission is included.
+Version 0.1.1 includes public-listing metadata and icon assets. Local checks cover package structure and the writing samples described above; OpenAI's submission checks and developer identity verification happen in the submission dashboard. No public directory submission is included.
+
+The package declares availability in all supported countries and no payments or purchases. It is licensed under [Apache-2.0](LICENSE).

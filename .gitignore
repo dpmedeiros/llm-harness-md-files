@@ -9,6 +9,8 @@
 !/plugins/engineering-writing/**/
 !/plugins/engineering-writing/**/*.md
 !/plugins/engineering-writing/plugin.json
+!/plugins/engineering-writing/assets/icon.png
+!/plugins/engineering-writing/LICENSE
 !/plugins/engineering-writing/skills/engineering-writing/agents/openai.yaml
 !/.agents/
 !/.agents/plugins/
