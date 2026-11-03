@@ -1,0 +1,24 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "engineering-writing",
+  "version": "0.1.0",
+  "description": "Adaptable writing guidance for engineering documentation, change summaries, and work messages.",
+  "repository": "https://github.com/dpmedeiros/llm-harness-md-files",
+  "keywords": ["engineering", "writing", "documentation", "editing"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Engineering writing",
+        "shortDescription": "Clear engineering communication",
+        "longDescription": "Draft and revise engineering communication with clear reader context, explicit causal steps, and claims grounded in evidence. Adapt the defaults to your audience, voice, and project conventions.",
+        "category": "Productivity",
+        "capabilities": ["Draft engineering prose", "Revise technical explanations"],
+        "defaultPrompt": [
+          "Revise this technical explanation for an engineer new to the project.",
+          "Draft a PR description from these changes and validation results.",
+          "Make this engineering update clearer while preserving my voice and the facts."
+        ]
+      }
+    }
+  }
+}

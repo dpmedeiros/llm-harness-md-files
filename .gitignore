@@ -2,3 +2,23 @@
 !/*.md
 !/.gitignore
 !/voice-fingerprint.sanitized.json
+
+# Engineering writing plugin and its design/evaluation records.
+!/plugins/
+!/plugins/engineering-writing/
+!/plugins/engineering-writing/**/
+!/plugins/engineering-writing/**/*.md
+!/plugins/engineering-writing/plugin.json
+!/plugins/engineering-writing/skills/engineering-writing/agents/openai.yaml
+!/.agents/
+!/.agents/plugins/
+!/.agents/plugins/marketplace.json
+!/docs/
+!/docs/superpowers/
+!/docs/superpowers/specs/
+!/docs/superpowers/specs/2026-11-03-engineering-writing-design.md
+!/docs/superpowers/plans/
+!/docs/superpowers/plans/2026-11-03-engineering-writing.md
+!/docs/evaluations/
+!/docs/evaluations/engineering-writing/
+!/docs/evaluations/engineering-writing/*.md

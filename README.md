@@ -1,6 +1,10 @@
 # llm-harness-md-files
 
-Personal global instructions for Claude Code (also usable with other harnesses): the markdown files that tell it how to write, review and style code, plus a statistical fingerprint of my writing voice. Copy a file or two if you want to borrow the rules; nothing here runs on its own.
+Personal global instructions for Claude Code (also usable with other harnesses): the markdown files that tell it how to write, review and style code, plus a statistical fingerprint of my writing voice. The repository also includes a standalone engineering writing skill packaged as a Codex plugin.
+
+## Engineering writing plugin
+
+[Engineering writing](plugins/engineering-writing/README.md) adapts the principles in `WRITING.md` for documentation, change summaries, and work messages. It works without other skills and respects the user's voice, templates, and project conventions. The plugin README covers installation; `WRITING.md` remains unchanged.
 
 ## What's in the repo
 
