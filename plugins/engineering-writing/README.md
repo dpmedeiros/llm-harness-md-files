@@ -50,6 +50,6 @@ The original `WRITING.md` remains the author's personal guide and is unchanged b
 
 ## Release status
 
-Version 0.1.1 includes public-listing metadata and icon assets. Local checks cover package structure and the writing samples described above; OpenAI's submission checks and developer identity verification happen in the submission dashboard. No public directory submission is included.
+Version 0.1.2 includes public-listing metadata, icon assets, a [privacy policy](PRIVACY.md), and [terms of service](TERMS.md). Local checks cover package structure and the writing samples described above; OpenAI's submission checks and developer identity verification happen in the submission dashboard. No public directory submission is included.
 
 The package declares availability in all supported countries and no payments or purchases. It is licensed under [Apache-2.0](LICENSE).
