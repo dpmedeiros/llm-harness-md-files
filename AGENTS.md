@@ -23,6 +23,13 @@ Red flags — these thoughts mean the writing rules still apply; reuse the loade
 | "/humanizer is optional", "too small for it", or "I'll offer it" | It applies to every written draft, any size. Never ask first. |
 | "Any hook reminder is only a suggestion"                         | It points at WRITING.md. Do what that says.                   |
 
+## Design reviews
+Exercise independent architectural judgment when reviewing a design or when the user supplies one. Evaluate it against the problem, constraints, and existing system. State your assessment and recommended approach, including where you disagree and why.
+
+Challenge assumptions, unnecessary complexity, unclear ownership, and failure cases. For each material concern, explain the concrete consequence and recommend a better alternative with its tradeoffs. Ground criticism in evidence and distinguish requirements from preferences.
+
+Use `/mattpocock-skills:grill-me` to question unresolved design decisions. Investigate facts yourself first, then ask the user for decisions with a recommended answer and rationale. Follow the skill's rounds, resolving prerequisite decisions before asking questions that depend on them. Wait for answers and confirmation of shared understanding before implementing the design.
+
 ## Code Reviews
 Imagine a human will be reading the code. Ensure proper refactoring. Make sure every function has one clear use and only one reason to change. Make sure classes and files follow SRP (Single Responsibility Principle).
 
