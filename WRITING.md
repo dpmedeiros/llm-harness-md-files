@@ -3,6 +3,8 @@ Write like an engineer describing their own diff, not like a product announcemen
 
 Every section applies to all writing, except where a rule says otherwise. Rules marked "when describing finished changes" cover commit bodies, merge request (MR) and pull request (PR) descriptions, and status updates on finished work. Commit subjects follow the repo's convention. An MR/PR description follows those rules and "Technical documentation". PRs and MRs are the same thing: the `/mattpocock-skills:pr` skill applies to both.
 
+Read this file before the first user-facing reply in a session and reuse its rules throughout the session. Reread it if the file changes, its contents are no longer available after compaction, or a specific uncertainty requires checking a passage.
+
 ## Voice and wording
 - **When describing finished changes, lead with the verb, past tense.** "Moved the loop into…", "Preserved the original code…" — not "The workflow now…", "This change adds…", or subject-heavy sentences.
 - **Plain words over crafted ones, in simple sentences.** Reuse the plain verb instead of reaching for variety (avoid "stripped out / moved over / picked up" when "removed" works three times). Avoid repetitive parallel sentence constructions. Cut words that add no meaning.
@@ -20,6 +22,7 @@ Every section applies to all writing, except where a rule says otherwise. Rules 
 
 ## Reader context
 - **Write prose as if the reader has never seen it before.** Supply the purpose, starting conditions and context needed to understand the page without the conversation that produced it. When editing because of feedback, don't add a clause stating the reason for the edit; a reader days or weeks later won't know that context. Example: "`DEFAULT_PROFILE` is intentional, not a gap to close with an error" answers a question the reader never asked. Write "`DEFAULT_PROFILE` is intentional".
+- **Lead with the answer and order explanations from answer to consequence.** Put the concrete answer or result first, then define the relevant things or starting conditions. Describe what changes, why it changes and the consequence, in that order. Assume a capable reader who may not know the subject's internal details.
 - **State the current end state, not the reasoning path that led there.** Don't narrate the chain of decisions, alternatives considered, or how an artifact evolved — it bloats the document and overwhelms the reader. Architecture and design docs are the one exception: they may include a single level of rationale for why the current state is what it is, but never the full history behind it.
 - **Introduce unfamiliar terms in context.** Within a paragraph, usually lead with the sentence that uses the term, then define it immediately afterward. Expand abbreviations and explain specialized terms, ticket keys and internal tools before relying on them for further explanation. Put a new specialized term in **bold** at its first definition in an explanation, so readers can find it again. Bold the term rather than the whole sentence, and keep identifiers in code formatting. Give the local meaning needed to follow the section; use a glossary for later reference.
 - **Connect concepts to the task and give examples.** Explain what is being achieved, how it works and why the concept matters here. Use a small concrete example when it helps explain an unfamiliar concept or causal relationship; include quantities or units when they clarify the result.
@@ -32,14 +35,14 @@ Every section applies to all writing, except where a rule says otherwise. Rules 
 - **An MR/PR section may carry one clause naming what the change replaces.** Don't narrate before and after beyond that.
 
 ## Chat replies
-- **Lead with the answer.** Put the conclusion or result in the first sentence, then the supporting detail. Don't open with a restatement of the question or a description of what you are about to do.
+- **Check every reply before sending.** Apply the writing rules to progress updates, explanations, clarifying questions and final answers, including short operational replies. Revise any violations before sending.
 - **Skip stock openers and closers.** No "Great question" or similar praise, no closing offers ("Let me know if…"), and no recap of what the reply just said.
 
 ## Technical documentation
 Applies to anything with sections a reader can stop at early — READMEs, design/architecture docs, runbooks, skill/agent docs, reference guides.
 
 - **Open with the smallest thing a reader needs.** A TL;DR of 2-3 sentences at most, or a single "what this is" line, before any detail, so a reader who only reads the first section still leaves with the right mental model. Anything beyond that goes in the sections below it.
-- **Give the reader a reason to care before introducing the machinery.** Start an explanation with a concrete situation, problem or useful result, then show how the parts produce that result. Introduce terms through the example as they become necessary; avoid a paragraph of definitions before the reader knows their purpose. Mark invented examples as illustrative and preserve the distinction between planned and delivered behavior.
+- **Give the reader a reason to care before introducing the machinery.** Start an explanation with a concrete situation, problem or useful result, then show how the parts produce that result. Introduce terms through the example as they become necessary; avoid a paragraph of definitions before the reader knows their purpose.
 - **Make the main explanation easy to follow.** Use plain language and concrete examples, with precise requirements and exceptions in the sections that follow. Keep prerequisites and qualifications beside any claim that depends on them.
 - **Order sections by how often a reader needs them.** Common path first; edge cases, advanced configuration, and rare failure modes later or in a linked reference.
 - **Push deep detail out of the main flow.** Full option lists, implementation internals, and exhaustive edge cases belong in subsections, appendices, or separate reference files.
@@ -68,6 +71,6 @@ Verbal tics common in Claude-generated writing:
 - Use at most one em-dash and one parenthetical aside per paragraph.
 
 ## Humanizing pass
-Run the `/humanizer` skill on every written draft before finalizing and apply its edits, however small the draft is (one sentence or a table cell included). Written drafts are files, commit bodies, MR/PR descriptions, review comments, status updates, summaries, chat replies, and Jira, Confluence, Mattermost, or Slack content. Don't ask the user first or put it off to a later turn.
+Run the `/humanizer` skill on every written draft except replies in the current chat before finalizing and apply its edits, however small the draft is (one sentence or a table cell included). Written drafts include files, commit bodies, MR/PR descriptions, review comments, status updates, summaries, and Jira, Confluence, Mattermost, or Slack content. Don't ask the user first or put it off to a later turn. Current-chat replies follow the writing rules directly, including the check under "Chat replies".
 
 Any draft follows the style rules above directly when the skill isn't installed. For agent and skill definitions, keep the precision the instructions require — humanize tone and phrasing, but don't blur exact trigger conditions, parameter names, or specified behavior into vaguer prose.

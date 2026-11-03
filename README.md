@@ -4,7 +4,7 @@ Personal global instructions for Claude Code (also usable with other harnesses):
 
 ## Engineering writing plugin
 
-[Engineering writing](plugins/engineering-writing/README.md) adapts the principles in `WRITING.md` for documentation, change summaries, and work messages. It works without other skills and respects the user's voice, templates, and project conventions. The plugin README covers installation; `WRITING.md` remains unchanged.
+[Engineering writing](plugins/engineering-writing/README.md) adapts the principles in `WRITING.md` for documentation, change summaries, and work messages. It works without other skills and respects the user's voice, templates, and project conventions. The plugin README covers installation.
 
 ## What's in the repo
 

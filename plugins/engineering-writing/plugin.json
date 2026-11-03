@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "engineering-writing",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Adaptable writing guidance for engineering documentation, change summaries, and work messages.",
   "author": {
     "name": "Daniel Medeiros"
@@ -17,10 +17,10 @@
         "longDescription": "Draft and revise technical documentation, explanations, PR descriptions, review comments, and engineering updates. Give readers context, explain causal steps, and keep claims grounded in evidence. Adapt the defaults to your audience, voice, templates, and project conventions. Research, code validation, and sending or publishing remain part of the surrounding workflow.",
         "developerName": "Daniel Medeiros",
         "category": "Productivity",
-        "websiteURL": "https://github.com/dpmedeiros/llm-harness-md-files/tree/codex/engineering-writing-plugin/plugins/engineering-writing",
+        "websiteURL": "https://github.com/dpmedeiros/llm-harness-md-files/tree/main/plugins/engineering-writing",
         "supportURL": "https://github.com/dpmedeiros/llm-harness-md-files/issues",
-        "privacyPolicyURL": "https://github.com/dpmedeiros/llm-harness-md-files/blob/codex/engineering-writing-plugin/plugins/engineering-writing/PRIVACY.md",
-        "termsOfServiceURL": "https://github.com/dpmedeiros/llm-harness-md-files/blob/codex/engineering-writing-plugin/plugins/engineering-writing/TERMS.md",
+        "privacyPolicyURL": "https://github.com/dpmedeiros/llm-harness-md-files/blob/main/plugins/engineering-writing/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/dpmedeiros/llm-harness-md-files/blob/main/plugins/engineering-writing/TERMS.md",
         "logo": "./assets/icon.png",
         "composerIcon": "./assets/icon.png",
         "capabilities": ["Draft engineering prose", "Revise technical explanations"],
@@ -40,7 +40,7 @@
       },
       "publication": {
         "countries": [],
-        "release_notes": "Added published privacy policy and terms of service URLs and included both pages in the package. The policies describe the skills-only plugin, AI-provider processing, public GitHub support, and the existing Apache-2.0 license. Skill instructions are unchanged."
+        "release_notes": "Clarified explanation order, definitions, causal steps, and the use of quantities and examples. Added a revision check before every chat reply and removed repeated answer-first guidance from the documentation reference. Updated listing links to the repository's main branch."
       }
     }
   }

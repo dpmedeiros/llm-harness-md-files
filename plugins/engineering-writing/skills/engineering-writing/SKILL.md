@@ -1,6 +1,6 @@
 ---
 name: engineering-writing
-description: Use when drafting, editing, or explaining engineering communication, including technical documentation, PR or MR descriptions, commit bodies, review comments, issue discussions, and work messages.
+description: Use when drafting, editing, or explaining engineering communication, including technical documentation, PR or MR descriptions, commit bodies, review comments, issue discussions, work messages, and chat replies.
 ---
 
 # Engineering writing
@@ -29,7 +29,9 @@ Match each claim to its evidence. Preserve quantities, units, conditions, except
 
 ## Write the draft
 
-Lead with the concrete answer, purpose, or result appropriate to the task. Supply the starting conditions before explaining an operation. State what changes, what causes the change, and its consequence, including the intermediate step that makes the conclusion follow. Use a small example or diagram when it helps the reader understand that relationship.
+Lead with the concrete answer, purpose, or result appropriate to the task. Supply relevant definitions and starting conditions before explaining an operation. State what changes, why it changes, and its consequence, in that order, including the intermediate step that makes the conclusion follow.
+
+Assume a capable reader who may not know the subject's internal details. State the actual operation or relationship explicitly; use analogies and shorthand only to support it. Use quantities, units, a small example, or a diagram when they clarify that relationship.
 
 Use plain words and specific verbs. Keep related ideas connected, give each section one topic, and make every sentence add information the reader needs. Name a practical benefit when the evidence supports it.
 
@@ -40,6 +42,8 @@ Vary sentence lengths and openings naturally. Use emphasis, dashes, and parenthe
 ## Revise and deliver
 
 Reread “Ground the claims” and the applicable reference against the draft, checking that editing preserved meaning and the status of each claim. Then reread “Write the draft” for context, causal completeness, and readability.
+
+Apply this check before sending every reply in the current chat, including short progress updates, explanations, clarifying questions, and final answers. Revise any violations before sending.
 
 Read the passage for rhythm. Rewrite repetitive openings, forced parallel constructions, inflated wording, and stock introductions or closers. Keep warmth, humor, and distinctive phrasing when they suit the audience and preserve precision.
 

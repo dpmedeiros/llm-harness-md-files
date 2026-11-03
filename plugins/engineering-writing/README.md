@@ -46,10 +46,12 @@ The entry point owns the shared rules. Its three references add guidance for par
 
 In the source checkout, use `docs/evaluations/engineering-writing/scenarios.md` for behavioral checks. The adjacent `results.md` distinguishes structural validation, writing samples, and client installation evidence. Those development records live outside the plugin archive.
 
-The original `WRITING.md` remains the author's personal guide and is unchanged by this extraction. The package maintains its own rules; shared improvements require deliberate transfer during this initial version.
+`WRITING.md` is the author's personal guide. The package maintains its own rules; transfer shared improvements deliberately and keep the skill self-contained.
 
 ## Release status
 
-Version 0.1.2 includes public-listing metadata, icon assets, a [privacy policy](PRIVACY.md), and [terms of service](TERMS.md). Local checks cover package structure and the writing samples described above; OpenAI's submission checks and developer identity verification happen in the submission dashboard. No public directory submission is included.
+Version 0.1.3 clarifies explanation order and causal steps, applies the revision check before every chat reply, and removes repeated guidance. Its listing links point to `main`. The package includes icon assets, a [privacy policy](PRIVACY.md), and [terms of service](TERMS.md).
+
+Local structural checks cover this package. The behavioral samples above cover version 0.1.0 and have not been rerun for 0.1.3. OpenAI's submission checks and developer identity verification happen in the submission dashboard; preparing the package does not submit or publish it.
 
 The package declares availability in all supported countries and no payments or purchases. It is licensed under [Apache-2.0](LICENSE).

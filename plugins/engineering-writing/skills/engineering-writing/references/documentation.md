@@ -4,7 +4,7 @@ Help the reader understand or use the subject from the point where they arrive. 
 
 ## Start with the useful result
 
-Open a document with a short statement of what it is for, usually one to three sentences. Introduce the concrete problem or result before naming the machinery that produces it. In chat, put the answer first and add the supporting explanation it needs.
+Open a document with a short statement of what it is for, usually one to three sentences. Introduce the concrete problem or result before naming the machinery that produces it.
 
 Supply prerequisites beside the action that depends on them. Order a procedure so the reader can perform it: starting conditions, action, observable result, then the next action. Describe a check precisely enough that the reader can recognize success.
 

@@ -1,6 +1,6 @@
 # Engineering writing submission preparation
 
-The [version 0.1.2 policy publication record](policy-publication.md) contains the latest ZIP and verified privacy and terms URLs. The version 0.1.1 preparation record follows.
+The [version 0.1.3 release preparation record](release-0.1.3.md) contains the current archive and validation scope. The [version 0.1.2 policy publication record](policy-publication.md) documents the policy pages. The version 0.1.1 preparation record follows.
 
 Prepared version 0.1.1 for upload as a skills-only plugin. Local checks passed for the source and the extracted submission ZIP; OpenAI Platform's scans, verified publisher identity, attestations, and approval remain dashboard steps.
 
