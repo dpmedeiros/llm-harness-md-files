@@ -1,0 +1,47 @@
+{
+  "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
+  "name": "engineering-writing",
+  "version": "0.1.2",
+  "description": "Adaptable writing guidance for engineering documentation, change summaries, and work messages.",
+  "author": {
+    "name": "Daniel Medeiros"
+  },
+  "repository": "https://github.com/dpmedeiros/llm-harness-md-files",
+  "license": "Apache-2.0",
+  "keywords": ["engineering", "writing", "documentation", "editing"],
+  "extensions": {
+    "com.openai": {
+      "interface": {
+        "displayName": "Engineering writing",
+        "shortDescription": "Clear writing for engineers",
+        "longDescription": "Draft and revise technical documentation, explanations, PR descriptions, review comments, and engineering updates. Give readers context, explain causal steps, and keep claims grounded in evidence. Adapt the defaults to your audience, voice, templates, and project conventions. Research, code validation, and sending or publishing remain part of the surrounding workflow.",
+        "developerName": "Daniel Medeiros",
+        "category": "Productivity",
+        "websiteURL": "https://github.com/dpmedeiros/llm-harness-md-files/tree/codex/engineering-writing-plugin/plugins/engineering-writing",
+        "supportURL": "https://github.com/dpmedeiros/llm-harness-md-files/issues",
+        "privacyPolicyURL": "https://github.com/dpmedeiros/llm-harness-md-files/blob/codex/engineering-writing-plugin/plugins/engineering-writing/PRIVACY.md",
+        "termsOfServiceURL": "https://github.com/dpmedeiros/llm-harness-md-files/blob/codex/engineering-writing-plugin/plugins/engineering-writing/TERMS.md",
+        "logo": "./assets/icon.png",
+        "composerIcon": "./assets/icon.png",
+        "capabilities": ["Draft engineering prose", "Revise technical explanations"],
+        "defaultPrompt": [
+          "Revise this technical explanation for an engineer new to the project.",
+          "Draft a PR description from these changes and validation results.",
+          "Make this engineering update clearer while preserving my voice and the facts."
+        ]
+      },
+      "review": {
+        "commerce": false,
+        "prompts": [
+          "Write a short explanation for an engineer new to our job service. A worker claims a job by storing its worker ID and a lease expiration timestamp in the database. It renews the lease every 10 seconds, setting expiration to 30 seconds after that renewal. A recovery scanner runs at times 0, 5, 10, 15 seconds and so on. It clears the worker ID when expiration is less than or equal to the current time. An unowned job is eligible for another worker to claim. Worker A renews at time 0 and immediately crashes. Explain when and how another worker can take over. We have no information about when another worker polls. Keep it understandable without assuming the reader knows what a lease is.",
+          "Write a PR body using exactly these headings, in this order: `## What`, `## Validation`, `## Risk`. Facts: the event importer now sends events to the repository in batches of up to 100 instead of one event per call. Event order and the existing transaction boundary are unchanged. `cargo check` passed. Tests and benchmarks were not run. There are no measured performance results. Keep the body concise and ready to paste into the PR.",
+          "Write a team chat message of at most 70 words. Staging's database certificate expires on November 12, 2026. Production uses a different certificate and is unaffected. We can rotate staging's certificate on November 10 during the existing maintenance window, or add a separate window on November 11. Recommend November 10 because it uses an existing window. Ask the on-call owner to choose by November 6. Keep the message calm and conversational."
+        ]
+      },
+      "publication": {
+        "countries": [],
+        "release_notes": "Added published privacy policy and terms of service URLs and included both pages in the package. The policies describe the skills-only plugin, AI-provider processing, public GitHub support, and the existing Apache-2.0 license. Skill instructions are unchanged."
+      }
+    }
+  }
+}

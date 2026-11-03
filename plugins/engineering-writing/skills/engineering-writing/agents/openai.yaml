@@ -1,0 +1,4 @@
+interface:
+  display_name: "Engineering writing"
+  short_description: "Adaptable guidance for clear engineering communication"
+  default_prompt: "Use $engineering-writing to draft or revise this engineering communication for its intended reader."
