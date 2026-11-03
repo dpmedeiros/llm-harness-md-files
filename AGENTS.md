@@ -7,7 +7,7 @@ Prefer your org's JIRA CLI tool over MCP when one is available
 Use the `/skill-creator` skill (if running Claude, or another similar skill if available) when creating or editing a skill, unless otherwise stated. Before creating or editing a skill file, read SKILL_AUTHORING.md — its rules apply whether or not skill-creator is invoked. Don't read it unless you're actually working on a skill.
 
 ## Writing code
-Before writing or editing code in a given language, read CODE_STYLE.md. Don't read it unless you're actually writing or editing code.
+Before writing or editing code in a given language, read CODE_STYLE.md and CLEAN_ARCHITECTURE.md. Don't read them unless you're actually writing or editing code.
 
 ## Writing prose
 Before the first user-facing reply in a session, read WRITING.md once. Apply its rules throughout the session without rereading. Read it again only if the file changes, its contents are no longer available after compaction, or a specific uncertainty requires checking a passage. A new turn or writing task alone does not require another read. That covers chat replies, files, technical docs (READMEs, design/architecture docs, runbooks), MR/PR descriptions, commit bodies, review comments, status updates, summaries, agent/skill definitions, and Jira/Confluence/Mattermost/Slack/`<whatever chat client>` content, down to one added line or table cell. WRITING.md holds the style rules and the required `/humanizer` pass for written drafts.
