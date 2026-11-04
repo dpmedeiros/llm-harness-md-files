@@ -1,7 +1,7 @@
 # Writing rules
 Write like an engineer describing their own diff, not like a product announcement.
 
-Every section applies to all writing, except where a rule says otherwise. Rules marked "when describing finished changes" cover commit bodies, merge request (MR) and pull request (PR) descriptions, and status updates on finished work. Commit subjects follow the repo's convention. An MR/PR description follows those rules and "Technical documentation". PRs and MRs are the same thing: the `/mattpocock-skills:pr` skill applies to both.
+Every section applies to all writing, except where a rule says otherwise. Rules marked "when describing finished changes" cover commit bodies, merge request (MR) and pull request (PR) descriptions, and status updates on finished work. Use concise imperative commit subjects unless the repository defines another convention. An MR/PR description follows those rules and "Technical documentation". PRs and MRs are the same thing: the `/mattpocock-skills:pr` skill applies to both.
 
 Read this file before the first user-facing reply in a session and reuse its rules throughout the session. Reread it if the file changes, its contents are no longer available after compaction, or a specific uncertainty requires checking a passage.
 
@@ -18,7 +18,7 @@ Read this file before the first user-facing reply in a session and reuse its rul
 ## Honesty
 - **State the unglamorous truth.** If a step only makes tests compile, say "compile", not "verify". If something usually fails, say so. Never round reality up to sound tidy — the caveat is often the most useful sentence.
 - **Don't over-claim or conflate.** Match the words to what the code actually does; don't call a compile check a "green-gate" or merge two steps because it reads better.
-- **Label the basis and status of claims.** Distinguish observed facts, documented behavior, inference and uncertainty. Keep implemented behavior separate from proposed work, and identify illustrative examples so readers cannot mistake them for verified mechanisms.
+- **Label the basis and status of claims.** Distinguish observed facts, documented behavior, inference and uncertainty. Keep implemented behavior separate from proposed work. Label APIs as implemented or proposed, and mark illustrative examples and pseudocode so readers cannot mistake them for delivered interfaces.
 
 ## Reader context
 - **Write prose as if the reader has never seen it before.** Supply the purpose, starting conditions and context needed to understand the page without the conversation that produced it. When editing because of feedback, don't add a clause stating the reason for the edit; a reader days or weeks later won't know that context. Example: "`DEFAULT_PROFILE` is intentional, not a gap to close with an error" answers a question the reader never asked. Write "`DEFAULT_PROFILE` is intentional".
@@ -33,6 +33,7 @@ Read this file before the first user-facing reply in a session and reuse its rul
 - **One topic per file, section, or bullet.** Use the largest unit that fits the topic, and don't mix topics inside a unit.
 - **When describing finished changes, use numbered `###` sections for 3 or more changes when at least one needs a code block, a schema, or more than 2 sentences.** Title each with what changed, order them by what a reviewer should read first, and number them so reviewers can cite one. Each section must make sense on its own given the summary. Diff size alone doesn't justify sections. Otherwise use a flat list of 5 bullets or fewer. The 5-item limit applies to sections too.
 - **An MR/PR section may carry one clause naming what the change replaces.** Don't narrate before and after beyond that.
+- **Describe the resulting behavior in pull requests.** Link relevant specifications or issues, report verification commands and identify checks left unrun.
 
 ## Chat replies
 - **Check every reply before sending.** Apply the writing rules to progress updates, explanations, clarifying questions and final answers, including short operational replies. Revise any violations before sending.
@@ -42,17 +43,25 @@ Read this file before the first user-facing reply in a session and reuse its rul
 Applies to anything with sections a reader can stop at early — READMEs, design/architecture docs, runbooks, skill/agent docs, reference guides.
 
 - **Open with the smallest thing a reader needs.** A TL;DR of 2-3 sentences at most, or a single "what this is" line, before any detail, so a reader who only reads the first section still leaves with the right mental model. Anything beyond that goes in the sections below it.
-- **Give the reader a reason to care before introducing the machinery.** Start an explanation with a concrete situation, problem or useful result, then show how the parts produce that result. Introduce terms through the example as they become necessary; avoid a paragraph of definitions before the reader knows their purpose.
+- **Give the reader a reason to care before introducing the machinery.** Start with a concrete situation, problem or useful result, then show how the parts produce it.
 - **Make the main explanation easy to follow.** Use plain language and concrete examples, with precise requirements and exceptions in the sections that follow. Keep prerequisites and qualifications beside any claim that depends on them.
 - **Order sections by how often a reader needs them.** Common path first; edge cases, advanced configuration, and rare failure modes later or in a linked reference.
 - **Push deep detail out of the main flow.** Full option lists, implementation internals, and exhaustive edge cases belong in subsections, appendices, or separate reference files.
 - **Don't require later sections to understand earlier ones.** A reader should be able to stop after any section and have a correct, if incomplete, understanding.
+- **Maintain design documentation with the design.** When code introduces or changes a design, update the affected documentation. Revise existing sections in place and add a section only for a concept they do not already cover.
+
+### API references
+
+For each API reference, explain its purpose and bare contract in one or two short paragraphs stating what the operation does and who calls it. State **Input**, **Output** and **Side effects** explicitly, including "none" when applicable. These details may be comments beside a language-neutral interface definition or source comments beside the interface or trait.
+
+Keep one interface definition instead of repeating it in a table or another rendering. Include ownership/lifetime, completion and failure rules when they affect use, and link shared types to their owning definitions. Distinguish computed or staged results from committed results, and state who may read, publish or persist them.
 
 ## Workflows and diagrams
 
 Applies when explaining a process, design or behavior.
 
 - **Make the causal steps explicit.** State the goal and prerequisites, who performs each operation, what it reads or writes, and what result it produces. Include the intermediate step that explains why the result follows; keep analogies and shorthand secondary to the actual operation.
+- **Name the kind of commit.** When discussing both databases and version control, distinguish database transaction commits from Git commits.
 - **Use diagrams freely when they clarify the subject.** Show workflows, ownership, dependencies, state changes or comparisons when a picture makes the relationship easier to follow. Define terms before the diagram and explain its relevant result or example afterward. Match the detail to the audience: technical diagrams can name concrete objects and transaction boundaries; investor diagrams should show simple user journeys and benefits.
 
 ## Investor and product stories
