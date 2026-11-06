@@ -40,7 +40,7 @@
       },
       "publication": {
         "countries": [],
-        "release_notes": "Moved ownership of WRITING.md into the skill and removed the repository-root copy, preserving the guide's contents. Replaced AGENTS.md writing rules with a pointer to engineering-writing and updated maintenance documentation for the single guide."
+        "release_notes": "Moved ownership of WRITING.md into the skill and removed the repository-root copy, preserving the guide during migration. Made the Humanizer pass conditional on the skill being installed. Replaced AGENTS.md writing rules with a pointer to engineering-writing and updated maintenance documentation for the single guide."
       }
     }
   }
