@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "engineering-writing",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Adaptable writing guidance for engineering documentation, change summaries, and work messages.",
   "author": {
     "name": "Daniel Medeiros"
@@ -40,7 +40,7 @@
       },
       "publication": {
         "countries": [],
-        "release_notes": "Made WRITING.md the writing authority and bundled an exact copy with the skill. Replaced duplicated rules with guide links, retained focused examples, and documented copy and comparison commands for maintenance."
+        "release_notes": "Moved ownership of WRITING.md into the skill and removed the repository-root copy, preserving the guide's contents. Replaced AGENTS.md writing rules with a pointer to engineering-writing and updated maintenance documentation for the single guide."
       }
     }
   }

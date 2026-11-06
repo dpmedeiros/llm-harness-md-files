@@ -1,6 +1,6 @@
 # Engineering writing skill and plugin
 
-Provide one adaptable skill for engineering communication, using repository-root `WRITING.md` as the sole authored writing authority. Bundle an exact copy with the skill so the Codex plugin and standalone installations can read it locally.
+Provide one adaptable skill for engineering communication, with [WRITING.md](../../../plugins/engineering-writing/skills/engineering-writing/WRITING.md) inside the skill as the sole maintained writing authority. Ship the complete skill with both the Codex plugin and standalone installations.
 
 ## Purpose and scope
 
@@ -12,7 +12,7 @@ This version provides writing guidance. Research, code review, document renderin
 
 ## Chosen approach
 
-Use one skill with focused references. Keep the workflow in `SKILL.md` and writing rules in the bundled `WRITING.md`. References link to the guide's owning heading anchors and retain illustrative examples or task-specific guidance.
+Use one skill with focused references. Keep the workflow in `SKILL.md` and writing rules in its local `WRITING.md`. References link to the guide's owning heading anchors and retain illustrative examples or task-specific guidance.
 
 The plugin is the installation package. The complete skill folder must also work when installed by itself, including its guide, references, and agent metadata. Use relative links within the skill. Use helpers named in the guide when available and apply the guide directly when they are absent.
 
@@ -48,13 +48,13 @@ Keep normal automatic skill discovery enabled, with a description scoped to draf
 
 Include a plugin README with installation and local testing instructions. Provide a repository-scoped marketplace entry when needed for the documented local installation route. Update `.gitignore` narrowly so the plugin, catalog, and design materials can be tracked; its current rules ignore nested files and JSON by default.
 
-Keep the root `WRITING.md` byte-unchanged during this normalization and preserve the existing global harness setup. Future writing-rule changes belong in the root guide. Follow [Test and maintain](../../../plugins/engineering-writing/README.md#test-and-maintain) to refresh and compare the bundled distribution copy.
+Maintain the guide directly at `plugins/engineering-writing/skills/engineering-writing/WRITING.md`. Remove the repository-root copy and replace the `AGENTS.md` writing block with a concise skill pointer covering all writing, including replies in the current chat. Preserve the guide's existing bytes during the migration and keep other harness instructions unchanged. Follow [Test and maintain](../../../plugins/engineering-writing/README.md#test-and-maintain) for later guide edits.
 
 The deliverable is a reviewable local package, not a public directory submission. Use verified repository information in metadata and leave optional identity, support, and licensing claims unset until supplied. Publishing and public-release licensing remain a later release decision.
 
 ## Validation and completion
 
-Validate the skill's frontmatter, metadata, reference paths, guide heading anchors, and plugin structure. Confirm that the root guide is unchanged and the bundled guide matches it byte-for-byte. Check that the complete standalone skill and extracted plugin archive contain the guide and resolve their local links without the source checkout or required helper skills.
+Validate the skill's frontmatter, metadata, reference paths, guide heading anchors, and plugin structure. Confirm that only the skill owns the guide and that its bytes match the guide at revision `ea55c0c` before migration. Check that `AGENTS.md` points to the skill and that the complete standalone skill and extracted plugin archive contain the guide and resolve their local links without the source checkout or required helper skills.
 
 Use representative behavioral scenarios with and without the skill to assess what it changes. Cover a causal explanation, documentation for an unfamiliar reader, a change summary with limited validation evidence, a work message, and a rewrite with an explicit voice or template. Judge preservation of facts, requirements, and uncertainty alongside clarity and adaptation; exact wording and bullet counts are not quality measures.
 

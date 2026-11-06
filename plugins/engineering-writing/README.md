@@ -1,6 +1,6 @@
 # Engineering writing
 
-Draft and revise engineering communication using the bundled [WRITING.md](skills/engineering-writing/WRITING.md). The skill adapts the writing to your audience, voice, templates, and project conventions.
+Draft and revise engineering communication using the skill's [WRITING.md](skills/engineering-writing/WRITING.md). The skill adapts the writing to your audience, voice, templates, and project conventions.
 
 ## Use the skill
 
@@ -42,12 +42,7 @@ Copy the entire `skills/engineering-writing/` folder, including `WRITING.md`, `r
 
 ## Test and maintain
 
-The repository-root `WRITING.md` is the sole authored authority for writing rules. The skill bundles an exact distribution copy at `skills/engineering-writing/WRITING.md` so an installation can read the guide locally. Edit the root guide, then refresh and compare the bundled copy from the repository root:
-
-```sh
-cp WRITING.md plugins/engineering-writing/skills/engineering-writing/WRITING.md
-cmp WRITING.md plugins/engineering-writing/skills/engineering-writing/WRITING.md
-```
+Edit [WRITING.md](skills/engineering-writing/WRITING.md) inside the skill. It is the sole maintained copy and ships with both the plugin and standalone installations.
 
 `SKILL.md` owns the workflow and routes to the guide. Its three focused references link to the owning guide sections and provide examples or task-specific guidance. The plugin manifest supplies installation metadata; it adds no hooks, tools, or global instructions.
 
@@ -55,8 +50,8 @@ In the source checkout, use `docs/evaluations/engineering-writing/scenarios.md` 
 
 ## Release status
 
-Version 0.1.4 makes `WRITING.md` the writing authority, bundles an exact copy, and replaces duplicated rules with guide links. Its listing links point to `main`. The package includes icon assets, a [privacy policy](PRIVACY.md), and [terms of service](TERMS.md).
+Version 0.1.5 moves ownership of `WRITING.md` into the skill, removes the repository-root copy, and routes `AGENTS.md` writing instructions to the skill. Its listing links point to `main`. The package includes icon assets, a [privacy policy](PRIVACY.md), and [terms of service](TERMS.md).
 
-Local structural checks cover this package. The behavioral samples above cover version 0.1.0 and have not been rerun for 0.1.4. OpenAI's submission checks and developer identity verification happen in the submission dashboard; preparing the package does not submit or publish it.
+Local structural checks cover this package. The behavioral samples above cover version 0.1.0 and have not been rerun for 0.1.5. OpenAI's submission checks and developer identity verification happen in the submission dashboard; preparing the package does not submit or publish it.
 
 The package declares availability in all supported countries and no payments or purchases. It is licensed under [Apache-2.0](LICENSE).
