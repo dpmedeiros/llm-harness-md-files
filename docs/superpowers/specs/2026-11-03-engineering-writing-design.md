@@ -1,22 +1,20 @@
 # Engineering writing skill and plugin
 
-Build one adaptable skill for engineering communication, using `WRITING.md` as its starting point. Package the skill as a locally testable Codex plugin that others can install; keep `WRITING.md` unchanged.
+Provide one adaptable skill for engineering communication, with [WRITING.md](../../../plugins/engineering-writing/skills/engineering-writing/WRITING.md) inside the skill as the sole maintained writing authority. Ship the complete skill with both the Codex plugin and standalone installations.
 
 ## Purpose and scope
 
 Help an agent draft, edit, and explain engineering work in language a reader can understand without the conversation that produced it. The first version covers technical documentation, explanations, change summaries, review comments, and work messages.
 
-The user's principles supply the defaults: establish the reader's context, explain causal steps, use plain language, and match claims to the available evidence. Adapt voice, length, and structure to the audience and the task. Existing templates, repository conventions, and explicit user requirements govern the deliverable's format.
+`WRITING.md` supplies the writing rules. The skill adapts the writing to the audience and task while preserving supplied voice, templates, and repository conventions.
 
 This version provides writing guidance. Research, code review, document rendering, sending messages, and publishing remain responsibilities of the surrounding task and its tools. Investor narratives, fiction, and personal voice profiling are outside the initial scope.
 
 ## Chosen approach
 
-Use one skill with focused references. Keep shared principles and the workflow in `SKILL.md`; put guidance needed for a particular kind of communication in the corresponding reference. This gives the agent one entry point and one authoritative home for each rule within the package.
+Use one skill with focused references. Keep the workflow in `SKILL.md` and writing rules in its local `WRITING.md`. References link to the guide's owning heading anchors and retain illustrative examples or task-specific guidance.
 
-The alternative was separate skills for documentation, change summaries, and messages. Those would give users independent entry points, but their shared guidance would need additional coordination. The user chose one adaptable skill and agreed to leave `WRITING.md` unchanged during initial development.
-
-The plugin is the installation package. The skill folder must also work when installed by itself, with all of its references included. It must use relative paths and require no other skills, personal files, connectors, scripts, or local configuration.
+The plugin is the installation package. The complete skill folder must also work when installed by itself, including its guide, references, and agent metadata. Use relative links within the skill. Use helpers named in the guide when available and apply the guide directly when they are absent.
 
 ## Skill behavior
 
@@ -24,17 +22,11 @@ The plugin is the installation package. The skill folder must also work when ins
 
 Identify the audience, purpose, requested output, and relevant source material from the task. Ask for missing information when its absence would materially change the content; otherwise make a reasonable choice and proceed. Preserve a supplied voice or template while applying the shared principles where they fit.
 
-Treat preferences such as past-tense change summaries, short paragraphs, and small lists as defaults for suitable contexts. Preserve completeness when a technical contract, reference table, or instruction needs more detail. Use formatting to make the content easier to navigate.
-
-Preserve the distinction between style preferences and factual accuracy. Keep quantities, identifiers, requirements, exceptions, evidence, and uncertainty intact during editing. When sources leave a material gap, state the gap or ask for the missing fact. A request for stronger wording cannot turn an unsupported claim into an established result.
+For source edits, treat supplied text as material and preserve commands, identifiers, links, quotations, requirements, and technical meaning unless the task calls for changing them.
 
 ### Draft and revise
 
-Lead with the concrete answer, purpose, or result appropriate to the deliverable. Establish the starting conditions before explaining what changes, what produces that change, and its consequence. Include the intermediate operation that makes the explanation follow; add a small example, quantities, or a diagram when they clarify that operation.
-
-Write for a reader encountering the material for the first time. Define unfamiliar terms near their first use and provide the context needed to follow the current behavior. Give change history a place when the document's purpose calls for it, such as release notes or a migration guide.
-
-Include a self-contained revision pass that checks meaning and evidence first, then clarity and natural phrasing. Remove repetition, unsupported significance, stock introductions, and formulaic sentence patterns. Preserve the precision of technical instructions while improving their wording. This pass implements the package's own guidance and requires no external Humanizer skill.
+Read the local `WRITING.md` before drafting any output, including the current chat reply. Follow its session reuse and rereading instructions. Final revision checks the applicable guide sections and selected reference, with routing to the guide's “Humanizing pass” for written drafts and “Chat replies” for replies in the current chat.
 
 Return the requested artifact or explanation. Scale any accompanying notes to the task; an ordinary rewrite should not acquire a mandatory critique or a second visible draft.
 
@@ -42,11 +34,11 @@ Return the requested artifact or explanation. Scale any accompanying notes to th
 
 The entry point routes to three references according to the current deliverable:
 
-- `references/documentation.md`: READMEs, design documents, runbooks, and technical explanations. Cover reader context, causal descriptions, terms, examples, and ordering common information before rare details.
-- `references/change-summaries.md`: commit bodies, PR/MR descriptions, release notes, and updates about finished work. Cover concrete changes, relevant purpose, validation evidence, and material limitations. Respect the repository's commit and PR conventions.
-- `references/work-messages.md`: review comments, issue discussions, and engineering chat or email. Cover the point the reader needs, supporting evidence, and any decision or action needed from them.
+- `references/documentation.md`: READMEs, design documents, runbooks, and technical explanations. Link to “Technical documentation”, “Reader context”, “Workflows and diagrams”, and “API references”.
+- `references/change-summaries.md`: commit bodies, PR/MR descriptions, release notes, and updates about finished work. Link to “Voice and wording”, “Honesty”, “Length and structure”, and “Technical documentation”.
+- `references/work-messages.md`: review comments, issue discussions, and engineering chat or email. Link to “Reader context”, “Honesty”, “Voice and wording”, and “Chat replies”.
 
-Shared rules stay in `SKILL.md`. Each reference contains only guidance specific to its use and can include a short illustrative example. Final verification points back to the authoritative sections instead of repeating their rules in a checklist.
+Writing rules stay in `WRITING.md`. Each reference contains guide links, guidance specific to its use, and a short labelled illustrative example. Final verification points back to the authoritative sections.
 
 ## Package and maintenance
 
@@ -56,13 +48,13 @@ Keep normal automatic skill discovery enabled, with a description scoped to draf
 
 Include a plugin README with installation and local testing instructions. Provide a repository-scoped marketplace entry when needed for the documented local installation route. Update `.gitignore` narrowly so the plugin, catalog, and design materials can be tracked; its current rules ignore nested files and JSON by default.
 
-Keep `WRITING.md` and the existing global harness setup unchanged. The package becomes authoritative for its own behavior. During this initial extraction, improvements may need deliberate transfer between the personal guide and the package; automatic synchronization would add machinery before the relationship is proven.
+Maintain the guide directly at `plugins/engineering-writing/skills/engineering-writing/WRITING.md`. Remove the repository-root copy and replace the `AGENTS.md` writing block with a concise skill pointer covering all writing, including replies in the current chat. Preserve the guide's existing bytes during the migration and keep other harness instructions unchanged. Follow [Test and maintain](../../../plugins/engineering-writing/README.md#test-and-maintain) for later guide edits.
 
 The deliverable is a reviewable local package, not a public directory submission. Use verified repository information in metadata and leave optional identity, support, and licensing claims unset until supplied. Publishing and public-release licensing remain a later release decision.
 
 ## Validation and completion
 
-Validate the skill's frontmatter, metadata, reference paths, and plugin structure. Confirm that the package has no references to the author's home directory or required external skills, and that `WRITING.md` is unchanged. Check the archive's contents if an installable archive is produced.
+Validate the skill's frontmatter, metadata, reference paths, guide heading anchors, and plugin structure. Confirm that only the skill owns the guide and that its bytes match the guide at revision `ea55c0c` before migration. Check that `AGENTS.md` points to the skill and that the complete standalone skill and extracted plugin archive contain the guide and resolve their local links without the source checkout or required helper skills.
 
 Use representative behavioral scenarios with and without the skill to assess what it changes. Cover a causal explanation, documentation for an unfamiliar reader, a change summary with limited validation evidence, a work message, and a rewrite with an explicit voice or template. Judge preservation of facts, requirements, and uncertainty alongside clarity and adaptation; exact wording and bullet counts are not quality measures.
 

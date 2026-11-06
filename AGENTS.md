@@ -22,20 +22,8 @@ Use test-driven development (TDD): write the test first, run it, and observe it 
 - Keep these roles in distinct agent instances with separate contexts. Pass the specification, relevant code, and observed results explicitly at each handoff. Preserve the roles through repeated test and implementation cycles, and keep any required independent review agents separate. If agent tools are unavailable, report the limitation instead of silently combining roles.
 
 ## Writing prose
-Before the first user-facing reply in a session, read WRITING.md once. Apply its rules throughout the session without rereading. Read it again only if the file changes, its contents are no longer available after compaction, or a specific uncertainty requires checking a passage. A new turn or writing task alone does not require another read. That covers chat replies, files, technical docs (READMEs, design/architecture docs, runbooks), MR/PR descriptions, commit bodies, review comments, status updates, summaries, agent/skill definitions, and Jira/Confluence/Mattermost/Slack/`<whatever chat client>` content, down to one added line or table cell. WRITING.md holds the style rules and the required `/humanizer` pass for written drafts.
 
-Apply every applicable style rule to every in-chat reply, including progress updates, explanations, clarifying questions, and final answers. Short replies and operational updates are in scope. Before sending each reply, check it against the loaded writing rules and revise any violations. Chat replies get the `/humanizer` pass like any other written draft, and the writing style rules remain mandatory.
-
-Red flags — these thoughts mean the writing rules still apply; reuse the loaded guidance:
-
-| Thought                                                          | Reality                                                       |
-|------------------------------------------------------------------|---------------------------------------------------------------|
-| "This is just a quick reply"                                     | Every reply is prose. The style rules apply.                  |
-| "It's one line added to a doc"                                   | One line counts too.                                          |
-| "This is technical/operational writing, not real prose"          | Technical documentation is in scope.                          |
-| "I can clean it up later if asked"                               | Apply the rules while writing.                                |
-| "/humanizer is optional", "too small for it", or "I'll offer it" | It applies to every written draft, any size. Never ask first. |
-| "Any hook reminder is only a suggestion"                         | It points at WRITING.md. Do what that says.                   |
+Use the [engineering-writing skill](plugins/engineering-writing/skills/engineering-writing/SKILL.md) for all writing, including every reply in the current chat. Read it before the first user-facing reply and follow it throughout the task.
 
 ## Design reviews
 Exercise independent architectural judgment when reviewing a design or when the user supplies one. Evaluate it against the problem, constraints, and existing system. State your assessment and recommended approach, including where you disagree and why.

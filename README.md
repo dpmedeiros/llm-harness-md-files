@@ -4,13 +4,15 @@ Personal global instructions for Claude Code (also usable with other harnesses):
 
 ## Engineering writing plugin
 
-[Engineering writing](plugins/engineering-writing/README.md) adapts the principles in `WRITING.md` for documentation, change summaries, and work messages. It works without other skills and respects the user's voice, templates, and project conventions. The plugin README covers installation.
+[Engineering writing](plugins/engineering-writing/README.md) owns the [writing guide](plugins/engineering-writing/skills/engineering-writing/WRITING.md) for documentation, change summaries, work messages, and chat replies. The guide inside the skill is the sole maintained copy. The plugin README covers installation of the complete skill folder, including the guide, references, and agent metadata.
+
+Edit the guide inside the skill and follow the plugin's [Test and maintain](plugins/engineering-writing/README.md#test-and-maintain) procedure to validate changes.
 
 ## What's in the repo
 
-- `AGENTS.md` holds the top-level rules and tells Claude which of the other files to read before a given task: `CODE_STYLE.md` before writing code, `WRITING.md` before writing prose, `CLEAN_CODE.md` and `CLEAN_ARCHITECTURE.md` before a code review, and `SKILL_AUTHORING.md` before editing a skill.
+- `AGENTS.md` holds the top-level rules and routes writing to the engineering-writing skill. It names `CODE_STYLE.md` before writing code, `CLEAN_CODE.md` and `CLEAN_ARCHITECTURE.md` before a code review, and `SKILL_AUTHORING.md` before editing a skill.
 - `CLAUDE.md` and `RTK.md` configure RTK, a command-output filter that shortens shell output to save tokens.
-- `WRITING.md` has the prose rules: voice, honesty, structure for MR/PR descriptions and technical docs, and a required humanizer pass on written drafts.
+- `plugins/engineering-writing/skills/engineering-writing/WRITING.md` holds the skill's prose rules and revision requirements.
 - `CODE_STYLE.md` has language-agnostic defaults for writing and refactoring code.
 - `CLEAN_CODE.md` and `CLEAN_ARCHITECTURE.md` are cribbed summaries from github (original source forgotten) of the two Robert C. Martin books, used as review checklists.
 - `SKILL_AUTHORING.md` has the rules for writing Claude Code skill files.
