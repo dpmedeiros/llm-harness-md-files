@@ -50,8 +50,8 @@ In the source checkout, use `docs/evaluations/engineering-writing/scenarios.md` 
 
 ## Release status
 
-Version 0.1.5 moves ownership of `WRITING.md` into the skill, removes the repository-root copy, and routes `AGENTS.md` writing instructions to the skill. Its listing links point to `main`. The package includes icon assets, a [privacy policy](PRIVACY.md), and [terms of service](TERMS.md).
+Added guidance in version 0.1.6 for an informal, direct, approachable tone, like a knowledgeable colleague talking through the work. Encouraged contractions when they fit while keeping technical details precise. Listing links point to `main`. The package includes icon assets, a [privacy policy](PRIVACY.md), and [terms of service](TERMS.md).
 
-Local structural checks cover this package. The behavioral samples above cover version 0.1.0 and have not been rerun for 0.1.5. OpenAI's submission checks and developer identity verification happen in the submission dashboard; preparing the package does not submit or publish it.
+Local structural checks cover this package. The behavioral samples above cover version 0.1.0 and have not been rerun for 0.1.6. OpenAI's submission checks and developer identity verification happen in the submission dashboard; preparing the package does not submit or publish it.
 
 The package declares availability in all supported countries and no payments or purchases. It is licensed under [Apache-2.0](LICENSE).

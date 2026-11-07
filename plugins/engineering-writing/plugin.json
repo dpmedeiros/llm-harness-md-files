@@ -1,7 +1,7 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "engineering-writing",
-  "version": "0.1.5",
+  "version": "0.1.6",
   "description": "Adaptable writing guidance for engineering documentation, change summaries, and work messages.",
   "author": {
     "name": "Daniel Medeiros"
@@ -40,7 +40,7 @@
       },
       "publication": {
         "countries": [],
-        "release_notes": "Moved ownership of WRITING.md into the skill and removed the repository-root copy, preserving the guide during migration. Made the Humanizer pass conditional on the skill being installed. Replaced AGENTS.md writing rules with a pointer to engineering-writing and updated maintenance documentation for the single guide."
+        "release_notes": "Added guidance for an informal, direct, approachable tone, like a knowledgeable colleague talking through the work. Encouraged contractions when they fit while keeping technical details precise."
       }
     }
   }
