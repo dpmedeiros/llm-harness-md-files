@@ -6,6 +6,7 @@ Every section applies to all writing, except where a rule says otherwise. Rules 
 Read this file before the first user-facing reply in a session and reuse its rules throughout the session. Reread it if the file changes, its contents are no longer available after compaction, or a specific uncertainty requires checking a passage.
 
 ## Voice and wording
+- **Adopt an informal tone.** Write like a knowledgeable colleague talking through the work: direct, natural and approachable. Use contractions when they fit, keep technical details precise, and avoid stiff or ceremonial wording.
 - **When describing finished changes, lead with the verb, past tense.** "Moved the loop into…", "Preserved the original code…" — not "The workflow now…", "This change adds…", or subject-heavy sentences.
 - **Plain words over crafted ones, in simple sentences.** Reuse the plain verb instead of reaching for variety (avoid "stripped out / moved over / picked up" when "removed" works three times). Avoid repetitive parallel sentence constructions. Cut words that add no meaning.
 - **Keep prose human and engaging.** Give the writing some punch and personality where the audience allows it. Choose concrete verbs and interesting, precise wording; keep technical meaning intact. Humor and warmth should help the reader follow the subject.
