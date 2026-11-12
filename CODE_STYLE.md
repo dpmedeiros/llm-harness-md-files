@@ -89,6 +89,18 @@ opening the helper implementations.
 Handle invalid inputs and early exits near the conditions that cause them, so the main path stays
 visible. Use comments to explain constraints or reasons that names and structure cannot express.
 
+## Waiting and synchronization
+
+Prefer blocking OS synchronization, notifications, condition variables, channels, or async waits
+when waiting for a resource or state change. Avoid thread sleeps and periodic retry polling whenever
+an appropriate waiting mechanism is available. Choose async waits when the surrounding code uses
+an async runtime; keep blocking waits off executor threads. Put platform-specific waiting behavior
+behind an OS-independent interface.
+
+Use readiness handshakes and observable state in concurrency tests. A fixed delay does not establish
+that another participant is ready. When a delay or polling loop is necessary, document why the
+available synchronization mechanisms do not fit, and define its timeout and cancellation behavior.
+
 ## Behavior-driven tests
 
 Use Given/When/Then style for every test, in every language.
