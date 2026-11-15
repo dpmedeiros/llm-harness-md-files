@@ -11,7 +11,7 @@ Before writing or editing code in a given language, read CODE_STYLE.md and CLEAN
 
 ## Independent implementation agents
 
-For every coding task, use separate agents for test writing, code implementation, and fixes. This is a standing rule across sessions, including work performed through skills.
+For every coding task, use separate agents for test writing, code implementation and fixes, including work performed through skills. Follow the project's role procedure when provided; otherwise apply the procedure below.
 
 Use test-driven development (TDD): write the test first, run it, and observe it fail for the expected reason before beginning the corresponding production implementation or fix. Repeat this sequence for each behavior change. A test that has not been run, already passes, or fails because of an unrelated setup error does not satisfy this requirement.
 
@@ -41,14 +41,14 @@ During a design discussion, answer the current question and keep provisional dec
 
 Otherwise, synchronize authorized changes when a coherent topic is settled, when the user explicitly requests an update, and before dependent design work, approval, implementation or handoff. At a handoff with open questions, apply settled changes and identify the remaining provisional decisions and pending edits. Run the applicable checks on the synchronized changes. A checkpoint grants no approval or implementation authorization.
 
-Record a rejected proposal immediately and stop relying on it. Complete its transitive architectural removal before dependent work, approval, implementation or handoff. Apply required approval-state changes immediately.
+Record a rejected proposal immediately and remove it and unsupported dependents from the active proposal. Reconcile its owning documents through the project's synchronization procedure before approval, implementation or another Story consumes the changed contract. Apply required approval-state changes immediately.
 
 ## Design reviews
 Exercise independent architectural judgment when reviewing a design or when the user supplies one. Evaluate it against the problem, constraints, and existing system. State your assessment and recommended approach, including where you disagree and why.
 
 ### Architectural reduction review
 
-Whenever an agent proposes, drafts or substantively revises a design, run an explicit architectural reduction review during drafting and before presenting the design for approval or handing it to implementation. Apply the same review to supplied designs. Use a read-only reviewer independent of the design author when delegation is available; otherwise perform an explicit reduction pass and report that independent review was unavailable.
+Whenever an agent proposes, drafts or substantively revises a design, run an explicit architectural reduction review during drafting and before presenting the design for approval or handing it to implementation. Apply the same review to supplied designs. Follow the project's reduction and transitive-removal procedures when provided; otherwise use the procedure below. Use a read-only reviewer independent of the design author when delegation is available; otherwise perform an explicit reduction pass and report that independent review was unavailable.
 
 Give the reviewer the current requirements, relevant existing implementation and design, and the proposal. The review must:
 
@@ -57,7 +57,7 @@ Give the reviewer the current requirements, relevant existing implementation and
 - Remove, merge, simplify or defer unjustified complexity. Speculative future needs and the existence of a proposal do not establish necessity.
 - State the smallest sufficient approach and its tradeoffs. The reviewer may reject the proposal's premise and conclude: "No new mechanism is needed by this Story's requirements." Treat that as a valid, successful review outcome when supported by evidence. Work may still require a direct change to existing code, configuration, documentation or tests.
 
-Record the verdict, current requirement evidence and unresolved findings in the work record. Apply [transitive architectural removal](#transitive-architectural-removal) to rejected proposals. Update the owning requirements, design and implementation plan to state the resulting architecture before handoff, preserve required behavior, and bring requirement changes to the user. Recheck affected conclusions after substantive design changes. The reviewer recommends; the user retains approval authority.
+Record the verdict, current requirement evidence and unresolved findings in the work record. Apply [transitive architectural removal](#transitive-architectural-removal) to rejected proposals. Reconcile the owning requirements, design and implementation plan at the project's synchronization boundary before approval or implementation handoff, preserve required behavior, and bring requirement changes to the user. Recheck affected conclusions after substantive design changes. The reviewer recommends; the user retains approval authority.
 
 Use `/mattpocock-skills:grill-me` to question unresolved design decisions. Investigate facts yourself first, then ask the user for decisions with a recommended answer and rationale. Follow the skill's rounds, resolving prerequisite decisions before asking questions that depend on them. Wait for answers and confirmation of shared understanding before implementing the design.
 
@@ -72,15 +72,8 @@ When a proposed mechanism, abstraction, data structure or requirement is rejecte
 - Verify that retained requirements, interfaces, ownership and workflows agree and that affected acceptance criteria still check required behavior. Inspect semantic dependencies as well as names and links. Complete removal only when no unsupported dependency or stale normative reference remains.
 
 ## Code Reviews
-Imagine a human will be reading the code. Ensure proper refactoring. Make sure every function has one clear use and only one reason to change. Make sure classes and files follow SRP (Single Responsibility Principle).
 
-Before reviewing code, read CLEAN_CODE.md — its principles apply to every review. Don't read it unless you're actually doing a code review.
-
-Before reviewing code, Read CLEAN_ARCHITECTURE.md. Don't read it unless you're actually doing a code review.
-
-Keep in mind SOLID principles: Single Responsibility, Open-Closed, Liskov Substitution, Interface Segregation, and Dependency Inversion.
-
-Don't Repeat Yourself (DRY).
+Before reviewing code, read [CLEAN_CODE.md](CLEAN_CODE.md) for readability, responsibility and duplication checks and [CLEAN_ARCHITECTURE.md](CLEAN_ARCHITECTURE.md) for SOLID principles and architectural boundaries. Apply those guides to the actual requirements and existing system. For design changes proposed by the review, follow the [design-review procedure](#design-reviews).
 
 ## Inspecting third-party library internals (Java/Maven)
 Don't use `javap` to inspect library bytecode. Instead, download the sources jar and read the
@@ -92,13 +85,6 @@ behavior/recommendations before relying solely on source-reading inference.
 ## Reviewing GitLab/GitHub MRs/PRs
 When reviewing a GitLab merge request or a GitHub PR, don't pull file contents one-by-one through the GitLab MCP/API (base64 blobs, per-file diff calls) — fetch the source branch (`git fetch origin <branch>`) and check it out into a worktree (`git worktree add <scratch-path> FETCH_HEAD`), then use normal local tools (`git diff develop...HEAD`, Read, Grep) against it. Much cheaper and less error-prone than decoding API responses.
 
-## RTK — Rust Token Killer
-Token-optimized CLI proxy (cuts up to 90% of bash output). All bash commands are automatically rewritten by a hook — no action needed for normal use. Meta commands, used directly:
+## Command output
 
-```bash
-rtk gain              # Show token savings analytics
-rtk discover           # Analyze Claude Code history for missed opportunities
-rtk proxy <cmd>        # Execute raw command without filtering (for debugging)
-```
-
-For the full command reference and troubleshooting, read RTK.md.
+When RTK hooks are available, follow [RTK.md](RTK.md) for filtered output, recovery and tool commands.
