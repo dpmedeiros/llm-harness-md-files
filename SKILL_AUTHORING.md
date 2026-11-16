@@ -2,6 +2,14 @@
 
 Apply these rules when creating or editing an agent skill.
 
+## Progressive disclosure
+
+Keep the purpose, common steps and constraints needed on every invocation in `SKILL.md`. Put substantial detail for a particular mode, provider, format or unusual case in a focused reference, with a precise pointer that says when to read it. Read only the references needed for the current task.
+
+Split by a real task branch: one provider's deployment instructions or one document format's editing procedure can be loaded independently. Keep a short, self-contained skill in one file when an extra routing layer would add no useful choice.
+
+When moving rules, follow [one authoritative home per rule](#one-authoritative-home-per-rule). Inspect consumers that copy, load or fingerprint the instructions, and update them with the moved files so isolated workflows retain the same rules and protections.
+
 ## One authoritative home per rule
 
 State each rule fully in its owning file or section. At consuming steps, use a precise pointer that names when to read it. Preserve trigger conditions, required actions, exceptions and completion criteria when moving a rule.
