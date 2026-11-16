@@ -1,7 +1,7 @@
 # Writing rules
 Write like an engineer describing their own diff, not like a product announcement.
 
-Every section applies to all writing, except where a rule says otherwise. Rules marked "when describing finished changes" cover commit bodies, merge request (MR) and pull request (PR) descriptions, and status updates on finished work. Use concise imperative commit subjects unless the repository defines another convention. An MR/PR description follows those rules and "Technical documentation". PRs and MRs are the same thing: the `/mattpocock-skills:pr` skill applies to both.
+Every section applies to all writing, except where a rule says otherwise. Rules marked "when describing finished changes" cover commit bodies, merge request (MR) and pull request (PR) descriptions, and status updates on finished work. Use concise imperative commit subjects unless the repository defines another convention. An MR/PR description follows those rules and [Technical documentation](references/documentation.md#technical-documentation). PRs and MRs are the same thing: the `/mattpocock-skills:pr` skill applies to both.
 
 Use judgment, not a checklist, when applying these rules. Requirements to supply context, examples, or causal detail apply only when the reader needs them. A complete explanation can be one sentence.
 
@@ -52,29 +52,16 @@ Apply this pass to the content, not just its wording. Do it after drafting and b
 - **Skip stock openers and closers.** No "Great question" or similar praise, no closing offers ("Let me know if…"), and no recap of what the reply just said.
 
 ## Technical documentation
-Applies to anything with sections a reader can stop at early — READMEs, design/architecture docs, runbooks, skill/agent docs, reference guides.
 
-- **Keep the opening short.** Apply the explanation order in [Reader context](#reader-context). Use a one-line description or a summary of at most three sentences. Put details in the sections below.
-- **Give the reader a reason to care before introducing the machinery.** State the concrete problem or useful result briefly, then show only the parts needed to understand it. Skip introductory context when the title or opening already makes the purpose clear.
-- **Keep the main explanation easy to follow.** Apply [Voice and wording](#voice-and-wording) and the example guidance in [Reader context](#reader-context). Put detailed requirements and exceptions in later sections. Keep prerequisites and qualifications beside the claims they affect.
-- **Order sections by how often a reader needs them.** Common path first; edge cases, advanced configuration, and rare failure modes later or in a linked reference.
-- **Push deep detail out of the main flow.** Full option lists, implementation internals, and exhaustive edge cases belong in subsections, appendices, or separate reference files.
-- **Don't require later sections to understand earlier ones.** A reader should be able to stop after any section and have a correct, if incomplete, understanding.
-- **Maintain design documentation with the design.** When code introduces or changes a design, update the affected documentation. Revise existing sections in place and add a section only for a concept they do not already cover.
+When writing a document with sections a reader can stop at early, including READMEs, design/architecture docs, runbooks, skill/agent docs, reference guides and MR/PR descriptions, read [Technical documentation](references/documentation.md#technical-documentation).
 
 ### API references
 
-For each API reference, explain its purpose and bare contract in one or two short paragraphs stating what the operation does and who calls it. State **Input**, **Output** and **Side effects** explicitly, including "none" when applicable. These details may be comments beside a language-neutral interface definition or source comments beside the interface or trait.
-
-Keep one interface definition instead of repeating it in a table or another rendering. Include ownership/lifetime, completion and failure rules when they affect use, and link shared types to their owning definitions. Distinguish computed or staged results from committed results, and state who may read, publish or persist them.
+For API or interface contracts, read [API references](references/documentation.md#api-references).
 
 ## Workflows and diagrams
 
-Applies when explaining a process, design or behavior.
-
-- **Make necessary causal steps explicit.** For workflows where the sequence matters, state the goal and prerequisites, who performs each operation, what it reads or writes, and the result. Include intermediate steps needed to explain the outcome, but don't turn a simple operation into an exhaustive walkthrough.
-- **Name the kind of commit.** When discussing both databases and version control, distinguish database transaction commits from Git commits.
-- **Use diagrams freely when they clarify the subject.** Show workflows, ownership, dependencies, state changes or comparisons when a picture makes the relationship easier to follow. Define terms before the diagram and explain its relevant result or example afterward. Match the detail to the audience: technical diagrams can name concrete objects and transaction boundaries; investor diagrams should show simple user journeys and benefits.
+When explaining a process, design or behavior, read [Workflows and diagrams](references/documentation.md#workflows-and-diagrams).
 
 ## Investor and product stories
 

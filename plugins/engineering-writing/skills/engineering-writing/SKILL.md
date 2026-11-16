@@ -5,7 +5,7 @@ description: Use when drafting, editing, or explaining engineering communication
 
 # Engineering writing
 
-Draft and revise engineering communication using [WRITING.md](WRITING.md), the authoritative writing guide bundled with this skill.
+Draft and revise engineering communication using [WRITING.md](WRITING.md), the shared writing rules bundled with this skill.
 
 ## Read the guide
 

@@ -42,9 +42,9 @@ Copy the entire `skills/engineering-writing/` folder, including `WRITING.md`, `r
 
 ## Test and maintain
 
-Edit [WRITING.md](skills/engineering-writing/WRITING.md) inside the skill. It is the sole maintained copy and ships with both the plugin and standalone installations.
+Edit shared rules in [WRITING.md](skills/engineering-writing/WRITING.md) and deliverable-specific rules in the owning file under `references/`. Both ship inside the complete skill for plugin and standalone installations.
 
-`SKILL.md` owns the workflow and routes to the guide. Its three focused references link to the owning guide sections and provide examples or task-specific guidance. The plugin manifest supplies installation metadata; it adds no hooks, tools, or global instructions.
+`SKILL.md` owns the workflow and routes to the guide. Its three focused references own task-specific guidance and examples and link to shared rules in the guide. The plugin manifest supplies installation metadata; it adds no hooks, tools, or global instructions.
 
 In the source checkout, use `docs/evaluations/engineering-writing/scenarios.md` for behavioral checks. The adjacent `results.md` distinguishes structural validation, writing samples, and client installation evidence. Those development records live outside the plugin archive.
 

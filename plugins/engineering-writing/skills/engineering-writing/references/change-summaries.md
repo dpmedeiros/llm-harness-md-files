@@ -1,6 +1,6 @@
 # Change summaries
 
-Use [Voice and wording](../WRITING.md#voice-and-wording) for finished changes, [Honesty](../WRITING.md#honesty) for validation claims, and [Length and structure](../WRITING.md#length-and-structure) for commit bodies and PR/MR descriptions. Apply [Technical documentation](../WRITING.md#technical-documentation) to PR/MR descriptions as directed by the guide.
+Use [Voice and wording](../WRITING.md#voice-and-wording) for finished changes, [Honesty](../WRITING.md#honesty) for validation claims, and [Length and structure](../WRITING.md#length-and-structure) for commit bodies and PR/MR descriptions. Apply [Technical documentation](documentation.md#technical-documentation) to PR/MR descriptions as directed by the guide.
 
 ## Match the destination
 

@@ -3,6 +3,14 @@
 !/.gitignore
 !/voice-fingerprint.sanitized.json
 
+# Shared task procedures and test-authoring rules.
+!/references/
+!/references/implementation.md
+!/references/clarification.md
+!/references/design-review.md
+!/code-style/
+!/code-style/testing.md
+
 # Engineering writing plugin and its design/evaluation records.
 !/plugins/
 !/plugins/engineering-writing/

@@ -1,18 +1,18 @@
 # Engineering writing skill and plugin
 
-Provide one adaptable skill for engineering communication, with [WRITING.md](../../../plugins/engineering-writing/skills/engineering-writing/WRITING.md) inside the skill as the sole maintained writing authority. Ship the complete skill with both the Codex plugin and standalone installations.
+Provide one adaptable skill for engineering communication, with [WRITING.md](../../../plugins/engineering-writing/skills/engineering-writing/WRITING.md) and focused references inside the skill as the maintained writing authorities. Ship the complete skill with both the Codex plugin and standalone installations.
 
 ## Purpose and scope
 
 Help an agent draft, edit, and explain engineering work in language a reader can understand without the conversation that produced it. The first version covers technical documentation, explanations, change summaries, review comments, and work messages.
 
-`WRITING.md` supplies the writing rules. The skill adapts the writing to the audience and task while preserving supplied voice, templates, and repository conventions.
+`WRITING.md` supplies shared writing rules; focused references own deliverable-specific rules. The skill adapts the writing to the audience and task while preserving supplied voice, templates, and repository conventions.
 
 This version provides writing guidance. Research, code review, document rendering, sending messages, and publishing remain responsibilities of the surrounding task and its tools. Investor narratives, fiction, and personal voice profiling are outside the initial scope.
 
 ## Chosen approach
 
-Use one skill with focused references. Keep the workflow in `SKILL.md` and writing rules in its local `WRITING.md`. References link to the guide's owning heading anchors and retain illustrative examples or task-specific guidance.
+Use one skill with focused references. Keep the workflow in `SKILL.md`, shared rules in its local `WRITING.md`, and deliverable-specific rules in focused references. Link each rule to its owning section and retain illustrative examples beside the guidance they explain.
 
 The plugin is the installation package. The complete skill folder must also work when installed by itself, including its guide, references, and agent metadata. Use relative links within the skill. Use helpers named in the guide when available and apply the guide directly when they are absent.
 
@@ -34,11 +34,11 @@ Return the requested artifact or explanation. Scale any accompanying notes to th
 
 The entry point routes to three references according to the current deliverable:
 
-- `references/documentation.md`: READMEs, design documents, runbooks, and technical explanations. Link to “Technical documentation”, “Reader context”, “Workflows and diagrams”, and “API references”.
-- `references/change-summaries.md`: commit bodies, PR/MR descriptions, release notes, and updates about finished work. Link to “Voice and wording”, “Honesty”, “Length and structure”, and “Technical documentation”.
+- `references/documentation.md`: READMEs, design documents, runbooks, and technical explanations. Own “Technical documentation”, “Workflows and diagrams”, and “API references”; link to the shared “Reader context” rules.
+- `references/change-summaries.md`: commit bodies, PR/MR descriptions, release notes, and updates about finished work. Link to the shared “Voice and wording”, “Honesty”, and “Length and structure” rules, and to the documentation reference for PR/MR structure.
 - `references/work-messages.md`: review comments, issue discussions, and engineering chat or email. Link to “Reader context”, “Honesty”, “Voice and wording”, and “Chat replies”.
 
-Writing rules stay in `WRITING.md`. Each reference contains guide links, guidance specific to its use, and a short labelled illustrative example. Final verification points back to the authoritative sections.
+Keep each rule in one owning section, with precise task triggers at consuming routes. `WRITING.md` retains its existing heading anchors as routes to moved rules. Each reference owns guidance specific to its use and links to shared rules, with a short labelled illustrative example. Final verification points back to the authoritative sections.
 
 ## Package and maintenance
 
