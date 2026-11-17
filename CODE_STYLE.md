@@ -34,7 +34,7 @@ reason to change. Separate validation, transformation, persistence and presentat
 concerns can change independently. A function may coordinate these steps to complete one workflow;
 keep their detailed implementations in helpers.
 
-Choose boundaries around behavior and ownership. Extract a helper when it names a distinct operation
+Group code by behavior and ownership. Extract a helper when it names a distinct operation
 or isolates a rule or side effect. Keep related calculations together when they produce one result;
 avoid splitting readable logic into trivial wrappers that force the reader to jump between functions.
 

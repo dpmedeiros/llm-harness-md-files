@@ -38,12 +38,12 @@ Given an implemented batching change and a compile check, when the agent writes 
 
 ### Brief
 
-Write a PR body using exactly these headings, in this order: `## What`, `## Validation`, `## Risk`. Facts: the event importer now sends events to the repository in batches of up to 100 instead of one event per call. Event order and the existing transaction boundary are unchanged. `cargo check` passed. Tests and benchmarks were not run. There are no measured performance results. Keep the body concise and ready to paste into the PR.
+Write a PR body using exactly these headings, in this order: `## What`, `## Validation`, `## Risk`. Facts: the event importer now sends events to the repository in batches of up to 100 instead of one event per call. Event order and which writes commit together are unchanged. `cargo check` passed. Tests and benchmarks were not run. There are no measured performance results. Keep the body concise and ready to paste into the PR.
 
 ### Criteria
 
 - Use the exact requested headings and no added wrapper.
-- Preserve batching, event order, and the transaction boundary.
+- Preserve batching, event order, and which writes commit together.
 - Identify `cargo check` as a compile check; preserve the missing tests and benchmarks without claiming verified performance or inventing a risk.
 
 ## 4. Engineering work message

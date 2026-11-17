@@ -8,6 +8,6 @@ A commit body can be shorter when the subject and diff supply context. Release n
 
 ## Illustrative change summary
 
-> Batched repository writes in groups of up to 100 events. Preserved event order and the transaction boundary.
+> Batched repository writes in groups of up to 100 events. Preserved event order and which writes commit together.
 >
 > `cargo check` passed. Tests and benchmarks were not run, so performance impact remains unmeasured.

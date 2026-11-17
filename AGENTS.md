@@ -38,7 +38,7 @@ When a proposed mechanism, abstraction, data structure or requirement is rejecte
 
 ## Code Reviews
 
-Before reviewing code, read [CLEAN_CODE.md](CLEAN_CODE.md) for readability, responsibility and duplication checks and [CLEAN_ARCHITECTURE.md](CLEAN_ARCHITECTURE.md) for SOLID principles and architectural boundaries. Apply those guides to the actual requirements and existing system. For design changes proposed by the review, follow the [design-review procedure](#design-reviews).
+Before reviewing code, read [CLEAN_CODE.md](CLEAN_CODE.md) for readability, responsibility and duplication checks and [CLEAN_ARCHITECTURE.md](CLEAN_ARCHITECTURE.md) for SOLID principles, component responsibilities and dependency rules. Apply those guides to the actual requirements and existing system. For design changes proposed by the review, follow the [design-review procedure](#design-reviews).
 
 ## Inspecting third-party library internals (Java/Maven)
 Don't use `javap` to inspect library bytecode. Instead, download the sources jar and read the

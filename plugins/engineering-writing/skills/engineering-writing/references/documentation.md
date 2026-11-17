@@ -25,7 +25,7 @@ Applies when explaining a process, design or behavior.
 
 - **Make necessary causal steps explicit.** For workflows where the sequence matters, state the goal and prerequisites, who performs each operation, what it reads or writes, and the result. Include intermediate steps needed to explain the outcome, but don't turn a simple operation into an exhaustive walkthrough.
 - **Name the kind of commit.** When discussing both databases and version control, distinguish database transaction commits from Git commits.
-- **Use diagrams freely when they clarify the subject.** Show workflows, ownership, dependencies, state changes or comparisons when a picture makes the relationship easier to follow. Define terms before the diagram and explain its relevant result or example afterward. Match the detail to the audience: technical diagrams can name concrete objects and transaction boundaries; investor diagrams should show simple user journeys and benefits.
+- **Use diagrams freely when they clarify the subject.** Show workflows, ownership, dependencies, state changes or comparisons when a picture makes the relationship easier to follow. Define terms before the diagram and explain its relevant result or example afterward. Match the detail to the audience: technical diagrams can show concrete objects and which changes commit together; investor diagrams should show simple user journeys and benefits.
 
 For procedures, describe each check precisely enough that the reader can recognize success before continuing.
 
