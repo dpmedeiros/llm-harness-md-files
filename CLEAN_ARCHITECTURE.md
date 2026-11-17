@@ -20,7 +20,7 @@ A common mistake is to privilege the behavior over the structure. Keep in mind t
 
 **3) The three paradigms**
 
-There are only 3 paradigms : 
+There are only 3 paradigms :
  - Structured programming (Discipline on direct transfer of control; no goto instructions)
  - Object-oriented programming (Discipline on indirect transfer of control ; no function pointers)
  - Functional programming (Discipline upon assignment ; no assignment)
@@ -96,14 +96,14 @@ About decoupling:
 - You can decouple by layers (UI, Business rules, database) or by uses cases
 - On a larger scale, you can decouple at the source level, or deployment level, or service level
 
-**17) Boundaries: Drawing lines**
+**17) Component responsibilities**
 
-The single responsibility principle will help you draw boundaries between components.
+The single responsibility principle will help you assign responsibilities to components.
 Some of those components are core business, others are plugins that are necessary but not directly related to core business.
 
-**18) Boundary anatomy**
+**18) Interface anatomy**
 
-Boundaries in a system are often a mix of local chatty ones and others that are concerned with latency
+Some interfaces connect local components that call each other frequently; others must account for higher latency.
 
 **19) Policy and level**
 
@@ -122,23 +122,20 @@ Your architecture should show what the system is about, not the framework it's u
 
 Framework -> Inteface adapters -> Application business rules -> Enterprise Business rules.
 As seen previously, the entities are the inner circle, then the uses cases then the controllers then the UI, Database etc...
-Only data will cross boundaries. And to do so, you should use simple data transfer objects. Don't cheat by using database rows or something like this that would violates the dependency rule.
+Pass only data between components, using simple data transfer objects. Passing database rows would violate the dependency rule.
 
 **23) Presenters and humble objects**
 
-Humble objects are often found at architectural boundaries. Those boundaries will involve a data structure and will divide something hard to test to something easy to test.
-This pattern increase testability.
+Humble objects often connect components through a data structure, separating hard-to-test behavior from easy-to-test logic. This improves testability.
 Example of humble projects : The view in MVP pattern or ORMs
 
-**24) Partial boundaries**
+**24) Partial separation**
 
-Sometimes a boundary is expansive and we are not sure it is necessary. The architect may want to implement a partial boundaries in order to keep the option open.
-You can either implement it without separating both part into two different components, creating one dimensional boundaries or use the facade pattern.
-Keep in mind that over time, those partial boundaries may be degraded.
+Separating components can be costly before the need is clear. An architect may preserve the option with partial separation: keep the code together while enforcing one-way dependencies, or use a facade. That separation can weaken over time.
 
-**25) Layers and boundaries**
+**25) Layers and responsibilities**
 
-Boundaries exists everywhere. Architects must recognize when they are needed. Despite the YAGNI principle that says we should not anticipate since the cost of adding a boundary is risky and costly. Nonetheless, we do not have to decide at the start of the project, we have to watch how the program evolve and look for friction and finally weight the cost of implementing the boundary and the cost of ignoring it.
+Decisions about separating components arise throughout a system. Weigh the cost of separation against the cost of leaving responsibilities coupled. The choice can wait until the program evolves and friction shows where a split would help; reassess as it changes.
 
 **26) The main component**
 
@@ -147,11 +144,11 @@ See it as a plugin that sets initial conditions, doing so will make the problem 
 
 **27) Services: Great and small**
 
-Services allows scalability and develop-ability but are not architecturally significant. The architecture is drawn by the boundaries of the system. 
+Services allows scalability and develop-ability but are not architecturally significant. The architecture is drawn by the responsibilities and dependencies of the system.
 Decoupling, independent development and deployment are fallacies when facing cross cutting concerns.
-A service can be surrounded by architectural boundary or composed of several components separated by such boundaries.
+A service can expose an interface and contain several components with their own interfaces.
 
-**28) The test boundary**
+**28) The test interface**
 
 Tests are part of the system. You have to design for testability or you will end up with a fragile and difficult to maintain test suite.
 For example, it's a bad idea to test your business rules through UI. When you'll change your UI, all the test will fail, that makes your system hard to change.
@@ -167,7 +164,7 @@ The data model is architecturally significant while the system that allows us to
 
 **31) The web is a detail**
 
-The GUI is a detail and the web is a GUI, therefore the web is a detail. As an architect, we need to keep it behind boundaries.
+The GUI is a detail and the web is a GUI, therefore the web is a detail. As an architect, we need to keep it behind interfaces.
 The interaction between a browser and the app is chatty and it needs to be abstracted to protect the business logic.
 
 **32) Frameworks are details**
@@ -177,5 +174,5 @@ Try not to tie the core of your software with the frameworks you use.
 
 **33) Case study**
 
-The case study divides the components in two ways: by actors respecting the principle of single responsibility and by the Dependency rule. 
+The case study divides the components in two ways: by actors respecting the principle of single responsibility and by the Dependency rule.
 It separates components that change for different reasons and at different speeds. Thus structured, the project can be deployed in the most appropriate way.

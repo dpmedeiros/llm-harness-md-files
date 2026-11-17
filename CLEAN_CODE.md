@@ -18,7 +18,7 @@ _____________________________________
 ## Understandability tips
 1. Be consistent. If you do something a certain way, do all similar things in the same way.
 2. Use explanatory variables.
-3. Encapsulate boundary conditions. Boundary conditions are hard to keep track of. Put the processing for them in one place.
+3. Encapsulate edge cases. Edge cases are hard to keep track of. Put the processing for them in one place.
 4. Prefer dedicated value objects to primitive type.
 5. Avoid logical dependency. Don't write methods which works correctly depending on something else in the same class.
 6. Avoid negative conditionals.

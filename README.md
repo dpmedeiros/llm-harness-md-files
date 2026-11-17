@@ -37,7 +37,7 @@ The samples fall into seven registers, because my PR descriptions, chat messages
 ### How it was derived
 
 1. `voice-indexer.py`, a stdlib-only Python script from the [humanizer skill](https://github.com/adelaidasofia/humanizer) by adelaidasofia (MIT license), read the samples and computed the statistics: sentence length (mean, standard deviation, 25th, 50th and 75th percentiles), paragraph length, punctuation per sentence or per 100 words (commas, colons, semicolons, parentheticals, em dashes, ellipses), connector frequency per 1,000 words, the most common sentence-opening words, vocabulary richness (type-token ratio), and the share of Spanish words.
-2. The script's output blends the six English registers, which understates engineering prose, so the same statistics were recomputed per register and merged into a `registers` section. Chat gets its own sentence boundaries per message, since the indexer merges messages that lack final punctuation.
+2. The script's output blends the six English registers, which understates engineering prose, so the same statistics were recomputed per register and merged into a `registers` section. Chat gets its own sentence endings per message, since the indexer merges messages that lack final punctuation.
 3. Each register also got `markers` (patterns to match), `avoid` (patterns to keep out) and sometimes a `caution`. These are qualitative notes written from reading the samples, not computed values.
 4. This published copy had work-specific content removed: the most common content words, opening words that were domain terms, coworker names and internal system names. The style statistics and the register notes are otherwise unchanged.
 
