@@ -11,7 +11,7 @@ Edit the owning guide or reference inside the skill and follow the plugin's [Tes
 ## What's in the repo
 
 - `AGENTS.md` holds the top-level rules, routes conditional procedures to `references/`, and routes writing to the engineering-writing skill. It names `CODE_STYLE.md` before writing code, `CLEAN_CODE.md` and `CLEAN_ARCHITECTURE.md` before a code review, and `SKILL_AUTHORING.md` before editing a skill.
-- `CLAUDE.md` and `RTK.md` configure RTK, a command-output filter that shortens shell output to save tokens.
+- `RTK.md` configures RTK, a command-output filter that shortens shell output to save tokens.
 - `plugins/engineering-writing/skills/engineering-writing/WRITING.md` holds the skill's prose rules and revision requirements.
 - `CODE_STYLE.md` has language-agnostic defaults for writing and refactoring code, with test-authoring rules in `code-style/testing.md`.
 - `CLEAN_CODE.md` and `CLEAN_ARCHITECTURE.md` are cribbed summaries from github (original source forgotten) of the two Robert C. Martin books, used as review checklists.
