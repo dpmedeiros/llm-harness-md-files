@@ -1,3 +1,4 @@
+dist/
 !/*.md
 !/.gitignore
 !/voice-fingerprint.sanitized.json
